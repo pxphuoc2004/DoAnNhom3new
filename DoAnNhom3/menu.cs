@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DoAnNhom3
 {
-    public partial class Menu: Form
+    public partial class Menu : Form
     {
         public Menu()
         {
@@ -30,6 +30,23 @@ namespace DoAnNhom3
         private void gioHang1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btqldanhmuc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btbaocao_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+
+            // Tạo mới instance của UserControl
+            BaoCaoThongKe baoCaoUC = new BaoCaoThongKe(this);
+            baoCaoUC.Dock = DockStyle.Fill; // Để tự giãn theo panel
+
+            // Thêm vào panel
+            panelMain.Controls.Add(baoCaoUC);
         }
     }
 }
