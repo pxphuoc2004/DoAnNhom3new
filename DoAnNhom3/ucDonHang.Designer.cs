@@ -85,7 +85,7 @@
             this.btthanhtoanKH.TabIndex = 39;
             this.btthanhtoanKH.Text = "Thanh toán";
             this.btthanhtoanKH.UseVisualStyleBackColor = true;
-            this.btthanhtoanKH.Click += new System.EventHandler(this.btthanhtoanKH_Click);
+  //          this.btthanhtoanKH.Click += new System.EventHandler(this.btthanhtoanKH_Click);
             // 
             // DonHang
             // 

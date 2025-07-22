@@ -23,7 +23,7 @@ namespace DoAnNhom3
         {
 
         }
-        public static string SDTKhachHang;
+        /*public static string SDTKhachHang;
         private void KhachHangDangNhap_Load(object sender, EventArgs e)
         {
             string connectionString = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=QuanLyBanHangOnline;Integrated Security=True;Encrypt=True";
@@ -88,6 +88,6 @@ namespace DoAnNhom3
             ucHoaDon = new HoaDon();
             ucHoaDon.SetData(tenMon, donGia, soLuong, sdtKH, hinhAnh);
             LoadUserControl(ucHoaDon);
-        }
+        }*/
     }
 }

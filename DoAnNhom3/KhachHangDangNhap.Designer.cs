@@ -120,7 +120,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "KhachHangDangNhap";
             this.Text = "KhachHangDangNhap";
-            this.Load += new System.EventHandler(this.KhachHangDangNhap_Load);
+       //     this.Load += new System.EventHandler(this.KhachHangDangNhap_Load);
             this.panel1.ResumeLayout(false);
             this.panelkhachhang.ResumeLayout(false);
             this.ResumeLayout(false);

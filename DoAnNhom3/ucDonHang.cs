@@ -22,7 +22,7 @@ namespace DoAnNhom3
         {
 
         }
-        private DonHang donHang;
+        /*private DonHang donHang;
         private void ucDonHang_Load(object sender, EventArgs e)
         {
             if (donHang != null)
@@ -77,7 +77,7 @@ namespace DoAnNhom3
         public void SetDonHang(DonHang dh)
         {
             donHang = dh;
-        }
+        }*/
     }
     
 }

@@ -24,7 +24,7 @@ namespace DoAnNhom3
         private decimal donGia;
         private string hinhAnh;
 
-        public void SetData(string ma, string ten, decimal gia, string tenAnh)
+        /*public void SetData(string ma, string ten, decimal gia, string tenAnh)
         {
             maMon = ma;
             tenMon = ten;
@@ -55,7 +55,7 @@ namespace DoAnNhom3
                 DonGia = this.donGia,
                 HinhAnh = this.hinhAnh,
                 SoLuong = 1, // có thể để mặc định là 1, hoặc để nhập từ textbox
-                SDTKH = KhachHangDangNhap.SDTNguoiDung // hoặc truyền từ form cha
+  //              SDTKH = KhachHangDangNhap.SDTNguoiDung // hoặc truyền từ form cha
             };
 
             var frm = this.FindForm() as KhachHangDangNhap;
@@ -63,6 +63,6 @@ namespace DoAnNhom3
             {
                 frm.MoDonHangVoiDuLieu(donHang);
             }
-        }
+        }*/
     }
 }

@@ -23,7 +23,7 @@ namespace DoAnNhom3
         {
 
         }
-        public void SetData(DonHang dh)
+        /*public void SetData(DonHang dh)
         {
             txbtenmonan.Text = dh.TenMon;
             txbdongia.Text = dh.DonGia.ToString("N0") + "đ";
@@ -34,6 +34,6 @@ namespace DoAnNhom3
                 pictureBox1.Image = Image.FromFile(imgPath);
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-        }
+        }*/
     }
 }

@@ -83,7 +83,7 @@
             this.btmuangay.TabIndex = 21;
             this.btmuangay.Text = "Mua ngay";
             this.btmuangay.UseVisualStyleBackColor = true;
-            this.btmuangay.Click += new System.EventHandler(this.btmuangay_Click);
+  //          this.btmuangay.Click += new System.EventHandler(this.btmuangay_Click);
             // 
             // ucMonAn
             // 
@@ -96,7 +96,7 @@
             this.Controls.Add(this.ptbanhmonan);
             this.Name = "ucMonAn";
             this.Size = new System.Drawing.Size(153, 209);
-            this.Load += new System.EventHandler(this.ucMonAn_Load);
+     //       this.Load += new System.EventHandler(this.ucMonAn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptbanhmonan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
