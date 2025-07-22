@@ -36,6 +36,7 @@
             btqlkhachhang = new Button();
             panel1 = new Panel();
             panelMain = new Panel();
+            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -112,6 +113,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(btqlnhanvien);
             panel1.Controls.Add(btqlkhachhang);
             panel1.Controls.Add(btqldanhmuc);
@@ -130,6 +132,15 @@
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(830, 590);
             panelMain.TabIndex = 7;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(72, 398);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 6;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
             // 
             // Menu
             // 
@@ -156,5 +167,6 @@
         private System.Windows.Forms.Button btqlkhachhang;
         private System.Windows.Forms.Panel panel1;
         public Panel panelMain;
+        private Button button1;
     }
 }
