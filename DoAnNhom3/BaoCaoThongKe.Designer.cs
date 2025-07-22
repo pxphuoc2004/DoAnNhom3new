@@ -115,15 +115,17 @@ namespace DoAnNhom3
             // dgvBaoCao
             // 
             dgvBaoCao.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBaoCao.Location = new Point(18, 345);
+            dgvBaoCao.Location = new Point(51, 345);
             dgvBaoCao.Margin = new Padding(4, 3, 4, 3);
             dgvBaoCao.Name = "dgvBaoCao";
-            dgvBaoCao.Size = new Size(711, 202);
+            dgvBaoCao.Size = new Size(645, 202);
             dgvBaoCao.TabIndex = 11;
+            dgvBaoCao.CellContentClick += dgvBaoCao_CellContentClick;
             // 
             // rdoNgay
             // 
             rdoNgay.AutoSize = true;
+            rdoNgay.Checked = true;
             rdoNgay.Location = new Point(37, 159);
             rdoNgay.Margin = new Padding(4, 3, 4, 3);
             rdoNgay.Name = "rdoNgay";
@@ -141,7 +143,6 @@ namespace DoAnNhom3
             rdoThang.Name = "rdoThang";
             rdoThang.Size = new Size(87, 19);
             rdoThang.TabIndex = 13;
-            rdoThang.TabStop = true;
             rdoThang.Text = "Theo Tháng";
             rdoThang.UseVisualStyleBackColor = true;
             // 
@@ -195,7 +196,7 @@ namespace DoAnNhom3
             Controls.Add(label1);
             Margin = new Padding(4, 3, 4, 3);
             Name = "BaoCaoThongKe";
-            Size = new Size(756, 563);
+            Size = new Size(740, 563);
             ((System.ComponentModel.ISupportInitialize)dgvBaoCao).EndInit();
             ResumeLayout(false);
             PerformLayout();

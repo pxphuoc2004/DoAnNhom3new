@@ -48,5 +48,30 @@ namespace DoAnNhom3
             // Thêm vào panel
             panelMain.Controls.Add(baoCaoUC);
         }
+
+        private void btkhonguyenlieu_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+
+            // Tạo mới instance của UserControl
+            KhoNLieu baoCaoUC = new KhoNLieu(this);
+            baoCaoUC.Dock = DockStyle.Fill; // Để tự giãn theo panel
+
+            // Thêm vào panel
+            panelMain.Controls.Add(baoCaoUC);
+
+        }
+
+        private void btqlkhachhang_Click(object sender, EventArgs e)
+        {
+            panelMain.Controls.Clear();
+
+            // Tạo mới instance của UserControl
+            QuanLiKhachHang baoCaoUC = new QuanLiKhachHang(this);
+            baoCaoUC.Dock = DockStyle.Fill; // Để tự giãn theo panel
+
+            // Thêm vào panel
+            panelMain.Controls.Add(baoCaoUC);
+        }
     }
 }

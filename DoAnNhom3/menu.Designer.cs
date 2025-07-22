@@ -42,7 +42,7 @@
             // btqlnhanvien
             // 
             btqlnhanvien.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btqlnhanvien.Location = new Point(66, 140);
+            btqlnhanvien.Location = new Point(11, 74);
             btqlnhanvien.Margin = new Padding(4, 3, 4, 3);
             btqlnhanvien.Name = "btqlnhanvien";
             btqlnhanvien.Size = new Size(175, 52);
@@ -53,10 +53,10 @@
             // btbaocao
             // 
             btbaocao.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btbaocao.Location = new Point(56, 520);
+            btbaocao.Location = new Point(11, 306);
             btbaocao.Margin = new Padding(4, 3, 4, 3);
             btbaocao.Name = "btbaocao";
-            btbaocao.Size = new Size(180, 52);
+            btbaocao.Size = new Size(175, 52);
             btbaocao.TabIndex = 1;
             btbaocao.Text = "Báo cáo thống kê";
             btbaocao.UseVisualStyleBackColor = true;
@@ -65,10 +65,10 @@
             // btkhuyenmai
             // 
             btkhuyenmai.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btkhuyenmai.Location = new Point(102, 323);
+            btkhuyenmai.Location = new Point(11, 190);
             btkhuyenmai.Margin = new Padding(4, 3, 4, 3);
             btkhuyenmai.Name = "btkhuyenmai";
-            btkhuyenmai.Size = new Size(140, 52);
+            btkhuyenmai.Size = new Size(177, 52);
             btkhuyenmai.TabIndex = 2;
             btkhuyenmai.Text = "Khuyến mãi";
             btkhuyenmai.UseVisualStyleBackColor = true;
@@ -76,22 +76,23 @@
             // btkhonguyenlieu
             // 
             btkhonguyenlieu.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btkhonguyenlieu.Location = new Point(69, 414);
+            btkhonguyenlieu.Location = new Point(11, 248);
             btkhonguyenlieu.Margin = new Padding(4, 3, 4, 3);
             btkhonguyenlieu.Name = "btkhonguyenlieu";
-            btkhonguyenlieu.Size = new Size(170, 52);
+            btkhonguyenlieu.Size = new Size(175, 52);
             btkhonguyenlieu.TabIndex = 3;
             btkhonguyenlieu.Text = "Kho nguyên liệu";
             btkhonguyenlieu.UseVisualStyleBackColor = true;
+            btkhonguyenlieu.Click += btkhonguyenlieu_Click;
             // 
             // btqldanhmuc
             // 
             btqldanhmuc.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btqldanhmuc.ForeColor = Color.Black;
-            btqldanhmuc.Location = new Point(93, 40);
+            btqldanhmuc.Location = new Point(11, 16);
             btqldanhmuc.Margin = new Padding(4, 3, 4, 3);
             btqldanhmuc.Name = "btqldanhmuc";
-            btqldanhmuc.Size = new Size(148, 52);
+            btqldanhmuc.Size = new Size(177, 52);
             btqldanhmuc.TabIndex = 4;
             btqldanhmuc.Text = "Quản lí menu";
             btqldanhmuc.UseVisualStyleBackColor = true;
@@ -100,13 +101,14 @@
             // btqlkhachhang
             // 
             btqlkhachhang.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btqlkhachhang.Location = new Point(42, 233);
+            btqlkhachhang.Location = new Point(11, 132);
             btqlkhachhang.Margin = new Padding(4, 3, 4, 3);
             btqlkhachhang.Name = "btqlkhachhang";
-            btqlkhachhang.Size = new Size(200, 52);
+            btqlkhachhang.Size = new Size(177, 52);
             btqlkhachhang.TabIndex = 5;
             btqlkhachhang.Text = "Quản lí khách hàng";
             btqlkhachhang.UseVisualStyleBackColor = true;
+            btqlkhachhang.Click += btqlkhachhang_Click;
             // 
             // panel1
             // 
@@ -119,14 +121,14 @@
             panel1.Location = new Point(2, 12);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(249, 605);
+            panel1.Size = new Size(204, 605);
             panel1.TabIndex = 6;
             // 
             // panelMain
             // 
-            panelMain.Location = new Point(258, 12);
+            panelMain.Location = new Point(213, 12);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(785, 590);
+            panelMain.Size = new Size(830, 590);
             panelMain.TabIndex = 7;
             // 
             // Menu

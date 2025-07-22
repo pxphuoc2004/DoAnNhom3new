@@ -81,5 +81,10 @@ namespace DoAnNhom3
         {
             formMenuCha.panelMain.Controls.Clear();
         }
+
+        private void dgvBaoCao_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
