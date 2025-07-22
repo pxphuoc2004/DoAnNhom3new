@@ -61,7 +61,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::DoAnNhom3.Properties.Resources.duigarann;
+//            this.pictureBox1.Image = global::DoAnNhom3.Properties.Resources.duigarann;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(153, 110);
@@ -71,7 +71,7 @@
             // 
             // btgiohang
             // 
-            this.btgiohang.BackgroundImage = global::DoAnNhom3.Properties.Resources.giohang;
+ //           this.btgiohang.BackgroundImage = global::DoAnNhom3.Properties.Resources.giohang;
             this.btgiohang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btgiohang.Location = new System.Drawing.Point(114, 165);
             this.btgiohang.Name = "btgiohang";

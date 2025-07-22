@@ -59,7 +59,7 @@
             // ptbgancon
             // 
             this.ptbgancon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ptbgancon.Image = global::DoAnNhom3.Properties.Resources.garan;
+//            this.ptbgancon.Image = global::DoAnNhom3.Properties.Resources.garan;
             this.ptbgancon.Location = new System.Drawing.Point(1, 1);
             this.ptbgancon.Name = "ptbgancon";
             this.ptbgancon.Size = new System.Drawing.Size(152, 110);
@@ -69,7 +69,7 @@
             // 
             // btgiohang
             // 
-            this.btgiohang.BackgroundImage = global::DoAnNhom3.Properties.Resources.giohang;
+    //        this.btgiohang.BackgroundImage = global::DoAnNhom3.Properties.Resources.giohang;
             this.btgiohang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btgiohang.Location = new System.Drawing.Point(115, 164);
             this.btgiohang.Name = "btgiohang";

@@ -136,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::DoAnNhom3.Properties.Resources.logo;
+//            this.BackgroundImage = global::DoAnNhom3.Properties.Resources.logo;
             this.ClientSize = new System.Drawing.Size(904, 532);
             this.Controls.Add(this.panel1);
             this.Name = "QuenMatKhau";
