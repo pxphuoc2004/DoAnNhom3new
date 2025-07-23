@@ -104,5 +104,10 @@ namespace DoAnNhom3
             panelkhachhang.Controls.Add(ucMenu);
             ucMenu.Dock = DockStyle.Fill;
         }
+
+        private void btqlitaikhoanKH_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

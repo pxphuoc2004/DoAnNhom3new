@@ -16,15 +16,7 @@ namespace DoAnNhom3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< Updated upstream
-            Application.Run(new Menu());
-=======
-<<<<<<< HEAD
             Application.Run(new KhachHangDangNhap());
-=======
-            Application.Run(new Menu());
->>>>>>> 3926876c5777b8b8a104f868dc196ae1256a2a8a
->>>>>>> Stashed changes
         }
     }
 }

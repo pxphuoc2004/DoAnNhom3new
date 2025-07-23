@@ -73,6 +73,7 @@
             btqlitaikhoanKH.TabIndex = 7;
             btqlitaikhoanKH.Text = "Tài khoản";
             btqlitaikhoanKH.UseVisualStyleBackColor = true;
+            btqlitaikhoanKH.Click += btqlitaikhoanKH_Click;
             // 
             // btmenuKH
             // 
