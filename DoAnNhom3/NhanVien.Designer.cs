@@ -1,4 +1,5 @@
-﻿namespace DoAnNhom3
+﻿
+namespace DoAnNhom3
 {
     partial class NhanVien
     {
@@ -28,237 +29,276 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btqldanhmuc = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.bttaodonhang = new System.Windows.Forms.Button();
-            this.txbdongiamenuNV = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbbTenmonmenuNV = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.txbsoluongmenuNV = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txbsizemenuNV = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dgvmenuNV = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvmenuNV)).BeginInit();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            button3 = new Button();
+            bttaodonhang = new Button();
+            btqldonhang = new Button();
+            btqldanhmuc = new Button();
+            button4 = new Button();
+            dgvmenuNV = new DataGridView();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            txbsoluongmenuNV = new TextBox();
+            cbbTenmonmenuNV = new ComboBox();
+            label1 = new Label();
+            txbdongiamenuNV = new TextBox();
+            txbtimkiemmon = new TextBox();
+            cbbDanhMuc = new ComboBox();
+            label5 = new Label();
+            panelMain = new Panel();
+            txbsizemenuNV = new TextBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvmenuNV).BeginInit();
+            panelMain.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.btqldanhmuc);
-            this.panel1.Location = new System.Drawing.Point(2, 102);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 439);
-            this.panel1.TabIndex = 0;
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(bttaodonhang);
+            panel1.Controls.Add(btqldonhang);
+            panel1.Controls.Add(btqldanhmuc);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(226, 614);
+            panel1.TabIndex = 0;
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(75, 314);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 45);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Thống kê";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(77, 205);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 57);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Quản lí đơn hàng";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btqldanhmuc
-            // 
-            this.btqldanhmuc.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btqldanhmuc.ForeColor = System.Drawing.Color.Black;
-            this.btqldanhmuc.Location = new System.Drawing.Point(77, 111);
-            this.btqldanhmuc.Name = "btqldanhmuc";
-            this.btqldanhmuc.Size = new System.Drawing.Size(127, 45);
-            this.btqldanhmuc.TabIndex = 5;
-            this.btqldanhmuc.Text = "Quản lí menu";
-            this.btqldanhmuc.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.bttaodonhang);
-            this.panel2.Controls.Add(this.txbdongiamenuNV);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.cbbTenmonmenuNV);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.txbsoluongmenuNV);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txbsizemenuNV);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.dgvmenuNV);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Location = new System.Drawing.Point(210, 50);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(692, 488);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            button3.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.Black;
+            button3.Location = new Point(37, 133);
+            button3.Margin = new Padding(4, 3, 4, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(148, 52);
+            button3.TabIndex = 8;
+            button3.Text = "Thống kê";
+            button3.UseVisualStyleBackColor = true;
             // 
             // bttaodonhang
             // 
-            this.bttaodonhang.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttaodonhang.Location = new System.Drawing.Point(308, 423);
-            this.bttaodonhang.Name = "bttaodonhang";
-            this.bttaodonhang.Size = new System.Drawing.Size(136, 33);
-            this.bttaodonhang.TabIndex = 25;
-            this.bttaodonhang.Text = "Tạo đơn hàng";
-            this.bttaodonhang.UseVisualStyleBackColor = true;
+            bttaodonhang.Font = new Font("Times New Roman", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            bttaodonhang.Location = new Point(37, 214);
+            bttaodonhang.Margin = new Padding(4, 3, 4, 3);
+            bttaodonhang.Name = "bttaodonhang";
+            bttaodonhang.Size = new Size(159, 38);
+            bttaodonhang.TabIndex = 25;
+            bttaodonhang.Text = "Tạo đơn hàng";
+            bttaodonhang.UseVisualStyleBackColor = true;
             // 
-            // txbdongiamenuNV
+            // btqldonhang
             // 
-            this.txbdongiamenuNV.Location = new System.Drawing.Point(407, 372);
-            this.txbdongiamenuNV.Name = "txbdongiamenuNV";
-            this.txbdongiamenuNV.Size = new System.Drawing.Size(193, 20);
-            this.txbdongiamenuNV.TabIndex = 24;
+            btqldonhang.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btqldonhang.ForeColor = Color.Black;
+            btqldonhang.Location = new Point(37, 61);
+            btqldonhang.Margin = new Padding(4, 3, 4, 3);
+            btqldonhang.Name = "btqldonhang";
+            btqldonhang.Size = new Size(148, 66);
+            btqldonhang.TabIndex = 7;
+            btqldonhang.Text = "Quản lí đơn hàng";
+            btqldonhang.UseVisualStyleBackColor = true;
+            btqldonhang.Click += btqldonhang_Click;
             // 
-            // label1
+            // btqldanhmuc
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(403, 348);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 21);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Đơn giá";
-            // 
-            // cbbTenmonmenuNV
-            // 
-            this.cbbTenmonmenuNV.FormattingEnabled = true;
-            this.cbbTenmonmenuNV.Items.AddRange(new object[] {
-            "Gà rán nguyên con",
-            "Khoai tây chiên",
-            "Nước ép dưa hấu",
-            "Nước ép dưa chuột"});
-            this.cbbTenmonmenuNV.Location = new System.Drawing.Point(158, 299);
-            this.cbbTenmonmenuNV.Name = "cbbTenmonmenuNV";
-            this.cbbTenmonmenuNV.Size = new System.Drawing.Size(185, 21);
-            this.cbbTenmonmenuNV.TabIndex = 22;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(64, 492);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(193, 20);
-            this.textBox3.TabIndex = 21;
-            // 
-            // txbsoluongmenuNV
-            // 
-            this.txbsoluongmenuNV.Location = new System.Drawing.Point(158, 372);
-            this.txbsoluongmenuNV.Name = "txbsoluongmenuNV";
-            this.txbsoluongmenuNV.Size = new System.Drawing.Size(193, 20);
-            this.txbsoluongmenuNV.TabIndex = 19;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(154, 348);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 21);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Số lượng";
-            // 
-            // txbsizemenuNV
-            // 
-            this.txbsizemenuNV.Location = new System.Drawing.Point(407, 299);
-            this.txbsizemenuNV.Name = "txbsizemenuNV";
-            this.txbsizemenuNV.Size = new System.Drawing.Size(193, 20);
-            this.txbsizemenuNV.TabIndex = 17;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(403, 275);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 21);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Size";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(154, 275);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 21);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Tên món ăn";
-            // 
-            // dgvmenuNV
-            // 
-            this.dgvmenuNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvmenuNV.Location = new System.Drawing.Point(119, 96);
-            this.dgvmenuNV.Name = "dgvmenuNV";
-            this.dgvmenuNV.Size = new System.Drawing.Size(516, 151);
-            this.dgvmenuNV.TabIndex = 8;
+            btqldanhmuc.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btqldanhmuc.ForeColor = Color.Black;
+            btqldanhmuc.Location = new Point(37, 3);
+            btqldanhmuc.Margin = new Padding(4, 3, 4, 3);
+            btqldanhmuc.Name = "btqldanhmuc";
+            btqldanhmuc.Size = new Size(148, 52);
+            btqldanhmuc.TabIndex = 5;
+            btqldanhmuc.Text = "Quản lí menu";
+            btqldanhmuc.UseVisualStyleBackColor = true;
+            btqldanhmuc.Click += btqldanhmuc_Click;
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(308, 22);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 38);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "MENU";
-            this.button4.UseVisualStyleBackColor = true;
+            button4.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.Black;
+            button4.Location = new Point(359, 3);
+            button4.Margin = new Padding(4, 3, 4, 3);
+            button4.Name = "button4";
+            button4.Size = new Size(148, 44);
+            button4.TabIndex = 7;
+            button4.Text = "MENU";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // dgvmenuNV
+            // 
+            dgvmenuNV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvmenuNV.Location = new Point(129, 71);
+            dgvmenuNV.Margin = new Padding(4, 3, 4, 3);
+            dgvmenuNV.Name = "dgvmenuNV";
+            dgvmenuNV.Size = new Size(602, 174);
+            dgvmenuNV.TabIndex = 8;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(129, 274);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(99, 21);
+            label2.TabIndex = 14;
+            label2.Text = "Tên món ăn";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(129, 479);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(82, 21);
+            label3.TabIndex = 16;
+            label3.Text = "Tìm kiếm";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(129, 402);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(78, 21);
+            label4.TabIndex = 18;
+            label4.Text = "Số lượng";
+            // 
+            // txbsoluongmenuNV
+            // 
+            txbsoluongmenuNV.Location = new Point(129, 429);
+            txbsoluongmenuNV.Margin = new Padding(4, 3, 4, 3);
+            txbsoluongmenuNV.Name = "txbsoluongmenuNV";
+            txbsoluongmenuNV.Size = new Size(224, 23);
+            txbsoluongmenuNV.TabIndex = 19;
+            // 
+            // cbbTenmonmenuNV
+            // 
+            cbbTenmonmenuNV.FormattingEnabled = true;
+            cbbTenmonmenuNV.Items.AddRange(new object[] { "Gà rán nguyên con", "Khoai tây chiên", "Nước ép dưa hấu", "Nước ép dưa chuột" });
+            cbbTenmonmenuNV.Location = new Point(129, 318);
+            cbbTenmonmenuNV.Margin = new Padding(4, 3, 4, 3);
+            cbbTenmonmenuNV.Name = "cbbTenmonmenuNV";
+            cbbTenmonmenuNV.Size = new Size(215, 23);
+            cbbTenmonmenuNV.TabIndex = 22;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(470, 402);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 21);
+            label1.TabIndex = 23;
+            label1.Text = "Đơn giá";
+            // 
+            // txbdongiamenuNV
+            // 
+            txbdongiamenuNV.Location = new Point(475, 429);
+            txbdongiamenuNV.Margin = new Padding(4, 3, 4, 3);
+            txbdongiamenuNV.Name = "txbdongiamenuNV";
+            txbdongiamenuNV.Size = new Size(224, 23);
+            txbdongiamenuNV.TabIndex = 24;
+            // 
+            // txbtimkiemmon
+            // 
+            txbtimkiemmon.Location = new Point(128, 521);
+            txbtimkiemmon.Name = "txbtimkiemmon";
+            txbtimkiemmon.Size = new Size(225, 23);
+            txbtimkiemmon.TabIndex = 26;
+            // 
+            // cbbDanhMuc
+            // 
+            cbbDanhMuc.FormattingEnabled = true;
+            cbbDanhMuc.Location = new Point(472, 521);
+            cbbDanhMuc.Name = "cbbDanhMuc";
+            cbbDanhMuc.Size = new Size(227, 23);
+            cbbDanhMuc.TabIndex = 27;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(480, 490);
+            label5.Name = "label5";
+            label5.Size = new Size(62, 15);
+            label5.TabIndex = 28;
+            label5.Text = "Danh mục";
+            // 
+            // panelMain
+            // 
+            panelMain.Controls.Add(label5);
+            panelMain.Controls.Add(cbbDanhMuc);
+            panelMain.Controls.Add(txbtimkiemmon);
+            panelMain.Controls.Add(txbdongiamenuNV);
+            panelMain.Controls.Add(label1);
+            panelMain.Controls.Add(cbbTenmonmenuNV);
+            panelMain.Controls.Add(txbsoluongmenuNV);
+            panelMain.Controls.Add(label4);
+            panelMain.Controls.Add(txbsizemenuNV);
+            panelMain.Controls.Add(label3);
+            panelMain.Controls.Add(label2);
+            panelMain.Controls.Add(dgvmenuNV);
+            panelMain.Controls.Add(button4);
+            panelMain.Dock = DockStyle.Right;
+            panelMain.Location = new Point(225, 0);
+            panelMain.Margin = new Padding(4, 3, 4, 3);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(830, 614);
+            panelMain.TabIndex = 1;
+            // 
+            // txbsizemenuNV
+            // 
+            txbsizemenuNV.Location = new Point(470, 318);
+            txbsizemenuNV.Margin = new Padding(4, 3, 4, 3);
+            txbsizemenuNV.Name = "txbsizemenuNV";
+            txbsizemenuNV.Size = new Size(224, 23);
+            txbsizemenuNV.TabIndex = 17;
             // 
             // NhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 532);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Name = "NhanVien";
-            this.Text = "NhanVien";
-            this.Load += new System.EventHandler(this.NhanVien_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvmenuNV)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1055, 614);
+            Controls.Add(panelMain);
+            Controls.Add(panel1);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "NhanVien";
+            Text = "NhanVien";
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvmenuNV).EndInit();
+            panelMain.ResumeLayout(false);
+            panelMain.PerformLayout();
+            ResumeLayout(false);
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btqldonhang;
         private System.Windows.Forms.Button btqldanhmuc;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dgvmenuNV;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox txbsoluongmenuNV;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txbsizemenuNV;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbbTenmonmenuNV;
-        private System.Windows.Forms.TextBox txbdongiamenuNV;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bttaodonhang;
+        private PaintEventHandler panel2_Paint;
+        private Button button4;
+        private DataGridView dgvmenuNV;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private TextBox txbsoluongmenuNV;
+        private ComboBox cbbTenmonmenuNV;
+        private Label label1;
+        private TextBox txbdongiamenuNV;
+        private TextBox txbtimkiemmon;
+        private ComboBox cbbDanhMuc;
+        private Label label5;
+        private Panel panelMain;
+        private TextBox txbsizemenuNV;
     }
 }
