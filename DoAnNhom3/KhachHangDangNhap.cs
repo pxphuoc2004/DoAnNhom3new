@@ -8,8 +8,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-
+using DoAnNhom3.QuanLy;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace DoAnNhom3
 {
     public partial class KhachHangDangNhap : Form
@@ -17,77 +17,92 @@ namespace DoAnNhom3
         public KhachHangDangNhap()
         {
             InitializeComponent();
+            Load += KhachHangDangNhap_Load;
         }
-
+        private ucDonHang ucDonHang = new ucDonHang();
         private void baoCaoThongKe1_Load(object sender, EventArgs e)
         {
 
         }
-        /*public static string SDTKhachHang;
+
         private void KhachHangDangNhap_Load(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=QuanLyBanHangOnline;Integrated Security=True;Encrypt=True";
+            string sql = "SELECT TenMon, GiaTien, HinhAnh FROM MonAn";
+            DataTable dt = Database.GetData(sql); // Giả sử bạn có sẵn class Database với hàm GetData
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            foreach (DataRow row in dt.Rows)
             {
-                try
-                {
-                    con.Open();
-                    string query = "SELECT MaMon, TenMon, GiaTien, HinhAnh FROM MonAn";
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    SqlDataReader reader = cmd.ExecuteReader();
+                string ten = row["TenMon"].ToString();
+                decimal gia = Convert.ToDecimal(row["GiaTien"]);
+                string fileAnh = row["HinhAnh"].ToString();
 
-                    while (reader.Read())
+                Image img = Image.FromFile(Path.Combine(Application.StartupPath, "HinhAnh", fileAnh));
+
+                ucMonAn mon = new ucMonAn();
+                mon.SetData(ten, gia, fileAnh);
+
+                mon.MuaNgayClicked += (s, ev) =>
+                {
+                    GioHangService.DanhSachMon.Add(ev);
+
+                    // 2. Gọi cập nhật danh sách món trong giỏ hàng
+                    //ucDonHang.LoadGioHang();  // tạo phương thức này ở dưới
+
+                    // 3. Hiển thị ucDonHang
+                    panelkhachhang.Controls.Clear();
+                    panelkhachhang.Controls.Add(ucDonHang);
+
+                    ucMenu = new ucMenuMonAn();
+                    panelkhachhang.Controls.Add(ucMenu);
+                };
+
+                // Gán sự kiện khi nhấn nút giỏ hàng
+                /*mon.ThemVaoGioHang += (s, ev) =>
+                {
+                    // Thêm vào giỏ
+                    GioHangService.DanhSachMon.Add(new MonAnEventArgs
                     {
-                        string ma = reader["MaMon"].ToString();
-                        string ten = reader["TenMon"].ToString();
-                        decimal gia = Convert.ToDecimal(reader["GiaTien"]);
-                        string hinh = reader["HinhAnh"].ToString();
+                        TenMon = ev.TenMon,
+                        GiaTien = ev.GiaTien,
+                        HinhAnh = ev.HinhAnh
+                    });
 
-                        ucMonAn uc = new ucMonAn();
-                        uc.SetData(ma, ten, gia, hinh);
-                        flowLayoutPanel1.Controls.Add(uc);
-                    }
+                    // Chuyển sang ucDonHang
+                    ucDonHang donHang = new ucDonHang();
+                    panelkhachhang.Controls.Clear();
+                    panelkhachhang.Controls.Add(donHang);
+                };*/
 
-                    reader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi: " + ex.Message);
-                }
+                flowLayoutPanel1.Controls.Add(mon);
+
             }
         }
-
-        // Khai báo biến để tái sử dụng các UserControl
-        private ucDonHang ucDonHang = new ucDonHang();
-        private HoaDon ucHoaDon = new HoaDon();
-
-        private void LoadUserControl(UserControl uc)
+        public void LoadGioHang()
         {
-            this.panelkhachhang.Controls.Clear();
-            uc.Dock = DockStyle.Fill;
-            this.panelkhachhang.Controls.Add(uc);
+            flowLayoutPanel1.Controls.Clear();
+            foreach (var mon in GioHangService.DanhSachMon)
+            {
+                themdonhang uc = new themdonhang();
+                uc.SetData(mon.TenMon, mon.GiaTien, mon.HinhAnh);
+                flowLayoutPanel1.Controls.Add(uc);
+            }
         }
-
-        public void MoDonHang(int maMon, string tenMon, decimal donGia)
+        private void Mon_MuaNgayClicked(object sender, EventArgs e)
         {
-            ucDonHang = new ucDonHang();
-            ucDonHang.SetData(maMon, tenMon, donGia);  // truyền dữ liệu món
-            LoadUserControl(ucDonHang);
+            flowLayoutPanel1.Controls.Clear();
+
+            ucDonHang donHang = new ucDonHang();
+            donHang.Dock = DockStyle.Fill;
+
+            flowLayoutPanel1.Controls.Add(donHang);
         }
+        private ucMenuMonAn ucMenu;
 
-        public void MoDonHangVoiDuLieu(DonHang donHang)
+        public void HienMenu()
         {
-            ucDonHang = new ucDonHang();  // tạo mới control
-            ucDonHang.SetDonHang(donHang); // truyền model
-            LoadUserControl(ucDonHang);
+            panelkhachhang.Controls.Clear();
+            panelkhachhang.Controls.Add(ucMenu);
+            ucMenu.Dock = DockStyle.Fill;
         }
-
-        public void MoHoaDon(string tenMon, decimal donGia, int soLuong, string sdtKH, string hinhAnh)
-        {
-            ucHoaDon = new HoaDon();
-            ucHoaDon.SetData(tenMon, donGia, soLuong, sdtKH, hinhAnh);
-            LoadUserControl(ucHoaDon);
-        }*/
     }
 }

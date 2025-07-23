@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace DoAnNhom3.Model
 {
-    internal class MonAn
+    public class MonAnEventArgs : EventArgs
     {
-        public int MaMonAn { get; set; }
         public string TenMon { get; set; }
-        public decimal DonGia { get; set; }
-        public string HinhAnh { get; set; }
+        public decimal GiaTien { get; set; }
+        public Image HinhAnh { get; set; }
     }
 }

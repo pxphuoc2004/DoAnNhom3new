@@ -17,52 +17,94 @@ namespace DoAnNhom3
         public ucMonAn()
         {
             InitializeComponent();
+            this.btmuangay.Click += new System.EventHandler(this.btmuangay_Click);
+           // this.btgiohang.Click += btgiohang_Click;
         }
-        // Các thuộc tính công khai để truyền dữ liệu
-        private string maMon;
-        private string tenMon;
-        private decimal donGia;
-        private string hinhAnh;
-
-        /*public void SetData(string ma, string ten, decimal gia, string tenAnh)
-        {
-            maMon = ma;
-            tenMon = ten;
-            donGia = gia;
-            lbtenmonan.Text = ten;
-            lbgia.Text = gia.ToString("N0") + "đ";
-
-            string path = Path.Combine(Application.StartupPath, "HinhAnh", tenAnh);
-            if (File.Exists(path))
-            {
-                ptbanhmonan.Image = Image.FromFile(path);
-                ptbanhmonan.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-        }
-
+        private string TenFileAnh;
         private void ucMonAn_Load(object sender, EventArgs e)
         {
 
         }
 
+        public void SetData(string tenMon, decimal gia, string tenFileAnh)
+        {
+
+            lbtenmonan.Text = tenMon;
+            lbgia.Text = gia.ToString("N0") + " đ";
+
+            string duongDan = Path.Combine(Application.StartupPath, "HinhAnh", tenFileAnh);
+            if (File.Exists(duongDan))
+            {
+                ptbanhmonan.Image = Image.FromFile(duongDan);
+                ptbanhmonan.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            else
+            {
+                // Gán ảnh mặc định nếu không tìm thấy ảnh
+                ptbanhmonan.Image = null;
+            }
+        }
+
+        /*private void ucMonAn_Load(object sender, EventArgs e)
+        {
+
+        }*/
+        public event EventHandler<MonAnEventArgs> MuaNgayClicked;
         private void btmuangay_Click(object sender, EventArgs e)
         {
-            // Tạo đơn hàng thực tế từ món này
-            var donHang = new DonHang
+            var args = new MonAnEventArgs
             {
-                MaMon = this.maMon,
-                TenMon = this.tenMon,
-                DonGia = this.donGia,
-                HinhAnh = this.hinhAnh,
-                SoLuong = 1, // có thể để mặc định là 1, hoặc để nhập từ textbox
-  //              SDTKH = KhachHangDangNhap.SDTNguoiDung // hoặc truyền từ form cha
+                TenMon = this.GetTenMon(),
+                GiaTien = this.GetGiaTien(),
+                HinhAnh = this.GetImage()
             };
+            MuaNgayClicked?.Invoke(this, args);
+        }
+        public string GetTenMon() => lbtenmonan.Text;
+        public decimal GetGiaTien() => decimal.Parse(lbgia.Text.Replace(",", "").Replace(" đ", ""));
+        public Image GetImage() => ptbanhmonan.Image;
 
-            var frm = this.FindForm() as KhachHangDangNhap;
-            if (frm != null)
+        
+       /* private void btgiohang_Click(object sender, EventArgs e)
+        {
+            var mon = new MonAnEventArgs
             {
-                frm.MoDonHangVoiDuLieu(donHang);
+                TenMon = GetTenMon(),
+                GiaTien = GetGiaTien(),
+                HinhAnh = GetImage()
             }
+            ;
+            GioHangService.DanhSachMon.Add(mon);
+
+            // Tìm form chứa ucMonAn và chuyển sang ucDonHang
+            var parentForm = this.FindForm() as KhachHangDangNhap;
+            if (parentForm != null)
+            {
+                var donHangUC = new ucDonHang();
+                parentForm.Controls["panelkhachhang"].Controls.Clear();
+                parentForm.Controls["panelkhachhang"].Controls.Add(donHangUC);
+            }
+
+
         }*/
+
+        private void btmuangay_Click_1(object sender, EventArgs e)
+        {
+            // Thêm vào giỏ hàng
+            GioHangService.DanhSachMon.Add(new MonAnEventArgs
+            {
+                TenMon = GetTenMon(),
+                GiaTien = GetGiaTien(),
+                HinhAnh = GetImage()
+            });
+
+            // Mở giao diện ucDonHang
+            /*var parent = this.FindForm() as KhachHangDangNhap;
+            if (parent != null)
+            {
+                parent.MoGioHang();
+            }*/
+
+        }
     }
 }

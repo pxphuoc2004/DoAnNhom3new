@@ -28,86 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.btthemvaogiohang = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.flpgiohang = new System.Windows.Forms.FlowLayoutPanel();
-            this.btthanhtoanKH = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            label1 = new Label();
+            btquaylai = new Button();
+            panel1 = new Panel();
+            flpgiohang = new FlowLayoutPanel();
+            btthanhtoanKH = new Button();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(191, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 27);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Giỏ hàng";
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(191, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(99, 27);
+            label1.TabIndex = 3;
+            label1.Text = "Giỏ hàng";
             // 
-            // btthemvaogiohang
+            // btquaylai
             // 
-            this.btthemvaogiohang.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btthemvaogiohang.Location = new System.Drawing.Point(119, 335);
-            this.btthemvaogiohang.Name = "btthemvaogiohang";
-            this.btthemvaogiohang.Size = new System.Drawing.Size(103, 56);
-            this.btthemvaogiohang.TabIndex = 34;
-            this.btthemvaogiohang.Text = "Thêm vào giỏ hàng";
-            this.btthemvaogiohang.UseVisualStyleBackColor = true;
+            btquaylai.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btquaylai.Location = new Point(119, 335);
+            btquaylai.Name = "btquaylai";
+            btquaylai.Size = new Size(103, 56);
+            btquaylai.TabIndex = 34;
+            btquaylai.Text = "Quay lại menu";
+            btquaylai.UseVisualStyleBackColor = true;
+            btquaylai.Click += btquaylai_Click;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.flpgiohang);
-            this.panel1.Controls.Add(this.btthanhtoanKH);
-            this.panel1.Controls.Add(this.btthemvaogiohang);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(104, 37);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(479, 409);
-            this.panel1.TabIndex = 37;
+            panel1.Controls.Add(flpgiohang);
+            panel1.Controls.Add(btthanhtoanKH);
+            panel1.Controls.Add(btquaylai);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(104, 37);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(479, 409);
+            panel1.TabIndex = 37;
             // 
             // flpgiohang
             // 
-            this.flpgiohang.AutoSize = true;
-            this.flpgiohang.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpgiohang.Location = new System.Drawing.Point(56, 79);
-            this.flpgiohang.Name = "flpgiohang";
-            this.flpgiohang.Size = new System.Drawing.Size(370, 240);
-            this.flpgiohang.TabIndex = 43;
+            flpgiohang.AutoSize = true;
+            flpgiohang.BackColor = Color.SkyBlue;
+            flpgiohang.FlowDirection = FlowDirection.TopDown;
+            flpgiohang.Location = new Point(56, 79);
+            flpgiohang.Name = "flpgiohang";
+            flpgiohang.Size = new Size(370, 240);
+            flpgiohang.TabIndex = 43;
             // 
             // btthanhtoanKH
             // 
-            this.btthanhtoanKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btthanhtoanKH.Location = new System.Drawing.Point(277, 335);
-            this.btthanhtoanKH.Name = "btthanhtoanKH";
-            this.btthanhtoanKH.Size = new System.Drawing.Size(103, 56);
-            this.btthanhtoanKH.TabIndex = 39;
-            this.btthanhtoanKH.Text = "Thanh toán";
-            this.btthanhtoanKH.UseVisualStyleBackColor = true;
-  //          this.btthanhtoanKH.Click += new System.EventHandler(this.btthanhtoanKH_Click);
+            btthanhtoanKH.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btthanhtoanKH.Location = new Point(277, 335);
+            btthanhtoanKH.Name = "btthanhtoanKH";
+            btthanhtoanKH.Size = new Size(103, 56);
+            btthanhtoanKH.TabIndex = 39;
+            btthanhtoanKH.Text = "Thanh toán";
+            btthanhtoanKH.UseVisualStyleBackColor = true;
+            btthanhtoanKH.Click += btthanhtoanKH_Click;
             // 
-            // DonHang
+            // ucDonHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            //this.BackgroundImage = global::DoAnNhom3.Properties.Resources.banner;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "DonHang";
-            this.Size = new System.Drawing.Size(692, 488);
-           // this.Load += new System.EventHandler(this.DonHang_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(panel1);
+            Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Name = "ucDonHang";
+            Size = new Size(692, 488);
+            Load += ucDonHang_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btthemvaogiohang;
+        private System.Windows.Forms.Button btquaylai;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btthanhtoanKH;
         private System.Windows.Forms.FlowLayoutPanel flpgiohang;

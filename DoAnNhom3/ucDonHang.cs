@@ -22,62 +22,37 @@ namespace DoAnNhom3
         {
 
         }
-        /*private DonHang donHang;
+
         private void ucDonHang_Load(object sender, EventArgs e)
         {
-            if (donHang != null)
+            flpgiohang.Controls.Clear();
+            foreach (var mon in GioHangService.DanhSachMon)
             {
-                // Tạo UserControl themdonhang và truyền dữ liệu
-                var uc = new themdonhang();
-                uc.SetData(donHang);
-
-                // Thêm vào giỏ hàng
-                flpgiohang.Controls.Clear();
+                themdonhang uc = new themdonhang();
+                uc.SetData(mon.TenMon, mon.GiaTien, mon.HinhAnh); // Tạo hàm SetData phù hợp
                 flpgiohang.Controls.Add(uc);
             }
         }
-        private int maMon;
-        private string tenMon;
-        private decimal donGia;
-
-        public void SetData(int ma, string ten, decimal gia)
+        public void ThemDonHangVaoGio(string tenMon, decimal giaTien, Image hinhAnh)
         {
-            maMon = ma;
-            tenMon = ten;
-            donGia = gia;
-
-            // Tùy bạn hiển thị label hoặc cho nhập số lượng
-            Label lbl = new Label();
-            lbl.Text = $"Món: {tenMon}, Giá: {donGia:N0}đ";
-            flpgiohang.Controls.Add(lbl);
-
-            NumericUpDown numSL = new NumericUpDown();
-            numSL.Minimum = 1;
-            numSL.Value = 1;
-            flpgiohang.Controls.Add(numSL);
+            themdonhang uc = new themdonhang();
+            uc.SetData(tenMon, giaTien, hinhAnh);
+            flpgiohang.Controls.Add(uc);
         }
 
         private void btthanhtoanKH_Click(object sender, EventArgs e)
         {
-            if (donHang == null) return;
 
-            int soLuong = 1; // mặc định, hoặc bạn có thể thêm NumericUpDown riêng trong themdonhang
-
-            decimal tongTien = donHang.DonGia * soLuong;
-            donHang.SoLuong = soLuong;
-
-            var frm = this.FindForm() as KhachHangDangNhap;
-            if (frm != null)
-            {
-                frm.MoHoaDon(donHang.TenMon, donHang.DonGia, soLuong, donHang.SDTKH, donHang.HinhAnh);
-            }
-        
         }
-
-        public void SetDonHang(DonHang dh)
+        public event EventHandler QuayLaiClicked;
+        private void btquaylai_Click(object sender, EventArgs e)
         {
-            donHang = dh;
-        }*/
+            var parent = this.FindForm() as KhachHangDangNhap;
+            if (parent != null)
+            {
+                parent.HienMenu(); // gọi hàm để hiển thị menu
+            }
+        }
+        
     }
-    
 }

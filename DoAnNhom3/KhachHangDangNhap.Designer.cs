@@ -28,102 +28,109 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btdangxuatKH = new System.Windows.Forms.Button();
-            this.btqlitaikhoanKH = new System.Windows.Forms.Button();
-            this.btmenuKH = new System.Windows.Forms.Button();
-            this.panelkhachhang = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1.SuspendLayout();
-            this.panelkhachhang.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new Panel();
+            btdangxuatKH = new Button();
+            btqlitaikhoanKH = new Button();
+            btmenuKH = new Button();
+            panelkhachhang = new Panel();
+            label1 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            panel1.SuspendLayout();
+            panelkhachhang.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btdangxuatKH);
-            this.panel1.Controls.Add(this.btqlitaikhoanKH);
-            this.panel1.Controls.Add(this.btmenuKH);
-            this.panel1.Location = new System.Drawing.Point(2, 138);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 398);
-            this.panel1.TabIndex = 0;
+            panel1.Controls.Add(btdangxuatKH);
+            panel1.Controls.Add(btqlitaikhoanKH);
+            panel1.Controls.Add(btmenuKH);
+            panel1.Location = new Point(2, 159);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(241, 507);
+            panel1.TabIndex = 0;
             // 
             // btdangxuatKH
             // 
-            this.btdangxuatKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btdangxuatKH.ForeColor = System.Drawing.Color.Black;
-            this.btdangxuatKH.Location = new System.Drawing.Point(66, 264);
-            this.btdangxuatKH.Name = "btdangxuatKH";
-            this.btdangxuatKH.Size = new System.Drawing.Size(127, 45);
-            this.btdangxuatKH.TabIndex = 8;
-            this.btdangxuatKH.Text = "Đăng xuất";
-            this.btdangxuatKH.UseVisualStyleBackColor = true;
+            btdangxuatKH.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btdangxuatKH.ForeColor = Color.Black;
+            btdangxuatKH.Location = new Point(77, 305);
+            btdangxuatKH.Margin = new Padding(4, 3, 4, 3);
+            btdangxuatKH.Name = "btdangxuatKH";
+            btdangxuatKH.Size = new Size(148, 52);
+            btdangxuatKH.TabIndex = 8;
+            btdangxuatKH.Text = "Đăng xuất";
+            btdangxuatKH.UseVisualStyleBackColor = true;
             // 
             // btqlitaikhoanKH
             // 
-            this.btqlitaikhoanKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btqlitaikhoanKH.ForeColor = System.Drawing.Color.Black;
-            this.btqlitaikhoanKH.Location = new System.Drawing.Point(69, 170);
-            this.btqlitaikhoanKH.Name = "btqlitaikhoanKH";
-            this.btqlitaikhoanKH.Size = new System.Drawing.Size(127, 45);
-            this.btqlitaikhoanKH.TabIndex = 7;
-            this.btqlitaikhoanKH.Text = "Tài khoản";
-            this.btqlitaikhoanKH.UseVisualStyleBackColor = true;
+            btqlitaikhoanKH.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btqlitaikhoanKH.ForeColor = Color.Black;
+            btqlitaikhoanKH.Location = new Point(80, 196);
+            btqlitaikhoanKH.Margin = new Padding(4, 3, 4, 3);
+            btqlitaikhoanKH.Name = "btqlitaikhoanKH";
+            btqlitaikhoanKH.Size = new Size(148, 52);
+            btqlitaikhoanKH.TabIndex = 7;
+            btqlitaikhoanKH.Text = "Tài khoản";
+            btqlitaikhoanKH.UseVisualStyleBackColor = true;
             // 
             // btmenuKH
             // 
-            this.btmenuKH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmenuKH.ForeColor = System.Drawing.Color.Black;
-            this.btmenuKH.Location = new System.Drawing.Point(69, 71);
-            this.btmenuKH.Name = "btmenuKH";
-            this.btmenuKH.Size = new System.Drawing.Size(127, 45);
-            this.btmenuKH.TabIndex = 6;
-            this.btmenuKH.Text = "Menu";
-            this.btmenuKH.UseVisualStyleBackColor = true;
+            btmenuKH.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btmenuKH.ForeColor = Color.Black;
+            btmenuKH.Location = new Point(80, 82);
+            btmenuKH.Margin = new Padding(4, 3, 4, 3);
+            btmenuKH.Name = "btmenuKH";
+            btmenuKH.Size = new Size(148, 52);
+            btmenuKH.TabIndex = 6;
+            btmenuKH.Text = "Menu";
+            btmenuKH.UseVisualStyleBackColor = true;
             // 
             // panelkhachhang
             // 
-            this.panelkhachhang.Controls.Add(this.button1);
-            this.panelkhachhang.Controls.Add(this.flowLayoutPanel1);
-            this.panelkhachhang.Location = new System.Drawing.Point(204, 48);
-            this.panelkhachhang.Name = "panelkhachhang";
-            this.panelkhachhang.Size = new System.Drawing.Size(692, 488);
-            this.panelkhachhang.TabIndex = 1;
+            panelkhachhang.Controls.Add(label1);
+            panelkhachhang.Controls.Add(flowLayoutPanel1);
+            panelkhachhang.Location = new Point(251, 60);
+            panelkhachhang.Margin = new Padding(4, 3, 4, 3);
+            panelkhachhang.Name = "panelkhachhang";
+            panelkhachhang.Size = new Size(807, 563);
+            panelkhachhang.TabIndex = 1;
             // 
-            // button1
+            // label1
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(290, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 45);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Menu";
-            this.button1.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(374, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(81, 27);
+            label1.TabIndex = 1;
+            label1.Text = "MENU";
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 69);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20, 10, 10, 10);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(689, 418);
-            this.flowLayoutPanel1.TabIndex = 0;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Location = new Point(0, 72);
+            flowLayoutPanel1.Margin = new Padding(4, 3, 4, 3);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Padding = new Padding(10);
+            flowLayoutPanel1.Size = new Size(799, 488);
+            flowLayoutPanel1.TabIndex = 0;
             // 
             // KhachHangDangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 532);
-            this.Controls.Add(this.panelkhachhang);
-            this.Controls.Add(this.panel1);
-            this.Name = "KhachHangDangNhap";
-            this.Text = "KhachHangDangNhap";
-       //     this.Load += new System.EventHandler(this.KhachHangDangNhap_Load);
-            this.panel1.ResumeLayout(false);
-            this.panelkhachhang.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1050, 614);
+            Controls.Add(panelkhachhang);
+            Controls.Add(panel1);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "KhachHangDangNhap";
+            Text = "KhachHangDangNhap";
+            Load += KhachHangDangNhap_Load;
+            panel1.ResumeLayout(false);
+            panelkhachhang.ResumeLayout(false);
+            panelkhachhang.PerformLayout();
+            ResumeLayout(false);
 
         }
 
@@ -133,8 +140,8 @@
         private System.Windows.Forms.Button btqlitaikhoanKH;
         private System.Windows.Forms.Button btmenuKH;
         private System.Windows.Forms.Button btdangxuatKH;
-        private System.Windows.Forms.Panel panelkhachhang;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
+        private Label label1;
+        public Panel panelkhachhang;
+        public FlowLayoutPanel flowLayoutPanel1;
     }
 }

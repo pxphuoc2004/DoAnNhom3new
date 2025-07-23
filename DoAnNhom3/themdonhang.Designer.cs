@@ -28,46 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txbtenmonan = new System.Windows.Forms.TextBox();
-            this.txbdongia = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            pictureBox1 = new PictureBox();
+            txbtenmonan = new TextBox();
+            txbdongia = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 84);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Location = new Point(0, 1);
+            pictureBox1.Margin = new Padding(4, 3, 4, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(144, 97);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // txbtenmonan
             // 
-            this.txbtenmonan.Location = new System.Drawing.Point(135, 20);
-            this.txbtenmonan.Name = "txbtenmonan";
-            this.txbtenmonan.Size = new System.Drawing.Size(172, 20);
-            this.txbtenmonan.TabIndex = 1;
+            txbtenmonan.Location = new Point(158, 23);
+            txbtenmonan.Margin = new Padding(4, 3, 4, 3);
+            txbtenmonan.Name = "txbtenmonan";
+            txbtenmonan.Size = new Size(200, 23);
+            txbtenmonan.TabIndex = 1;
             // 
             // txbdongia
             // 
-            this.txbdongia.Location = new System.Drawing.Point(135, 46);
-            this.txbdongia.Name = "txbdongia";
-            this.txbdongia.Size = new System.Drawing.Size(172, 20);
-            this.txbdongia.TabIndex = 2;
+            txbdongia.Location = new Point(158, 53);
+            txbdongia.Margin = new Padding(4, 3, 4, 3);
+            txbdongia.Name = "txbdongia";
+            txbdongia.Size = new Size(200, 23);
+            txbdongia.TabIndex = 2;
             // 
             // themdonhang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txbdongia);
-            this.Controls.Add(this.txbtenmonan);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "themdonhang";
-            this.Size = new System.Drawing.Size(322, 86);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(txbdongia);
+            Controls.Add(txbtenmonan);
+            Controls.Add(pictureBox1);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "themdonhang";
+            Size = new Size(376, 99);
+            Load += themdonhang_Load_1;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
