@@ -14,10 +14,6 @@ namespace DoAnNhom3.QuanLy
         //private static string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=QuanLyBanHangOnline;Integrated Security=True";
         //private static string connectionString = @"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\QuanLyBanHangOnline.mdf;Integrated Security=True";
         private static string connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=QuanLyBanHangOnline1;Trusted_Connection=True;";
-        private static string connectionString = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=QuanLyBanHangOnline1;Integrated Security=True;Encrypt=True";
-        //private static string connectionString = @"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\QuanLyBanHangOnline.mdf;Integrated Security=True";
-        private static string connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=QuanLyBanHangOnline1;Trusted_Connection=True;";
-
 
         public static DataTable GetData(string query, SqlParameter[] parameters = null)
         {

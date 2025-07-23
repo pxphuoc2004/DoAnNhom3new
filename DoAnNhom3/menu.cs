@@ -73,5 +73,10 @@ namespace DoAnNhom3
             // Thêm vào panel
             panelMain.Controls.Add(baoCaoUC);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -35,8 +35,8 @@
             btqldanhmuc = new Button();
             btqlkhachhang = new Button();
             panel1 = new Panel();
-            panelMain = new Panel();
             button1 = new Button();
+            panelMain = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -126,13 +126,6 @@
             panel1.Size = new Size(204, 605);
             panel1.TabIndex = 6;
             // 
-            // panelMain
-            // 
-            panelMain.Location = new Point(213, 12);
-            panelMain.Name = "panelMain";
-            panelMain.Size = new Size(830, 590);
-            panelMain.TabIndex = 7;
-            // 
             // button1
             // 
             button1.Location = new Point(72, 398);
@@ -141,6 +134,14 @@
             button1.TabIndex = 6;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // panelMain
+            // 
+            panelMain.Location = new Point(213, 12);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(830, 590);
+            panelMain.TabIndex = 7;
             // 
             // Menu
             // 
