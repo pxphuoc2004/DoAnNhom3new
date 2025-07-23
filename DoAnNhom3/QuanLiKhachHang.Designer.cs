@@ -28,40 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvkhachhang = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvkhachhang)).BeginInit();
-            this.SuspendLayout();
+            label1 = new Label();
+            dgvkhachhang = new DataGridView();
+            btnQuayLai = new Button();
+            label3 = new Label();
+            dgvTaiKhoan = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvkhachhang).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTaiKhoan).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(218, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 27);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Danh sách khách hàng";
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(73, 63);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(229, 27);
+            label1.TabIndex = 2;
+            label1.Text = "Danh sách khách hàng";
             // 
             // dgvkhachhang
             // 
-            this.dgvkhachhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvkhachhang.Location = new System.Drawing.Point(81, 106);
-            this.dgvkhachhang.Name = "dgvkhachhang";
-            this.dgvkhachhang.Size = new System.Drawing.Size(529, 322);
-            this.dgvkhachhang.TabIndex = 3;
+            dgvkhachhang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvkhachhang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvkhachhang.Location = new Point(16, 104);
+            dgvkhachhang.Margin = new Padding(4, 3, 4, 3);
+            dgvkhachhang.Name = "dgvkhachhang";
+            dgvkhachhang.Size = new Size(361, 372);
+            dgvkhachhang.TabIndex = 3;
+            // 
+            // btnQuayLai
+            // 
+            btnQuayLai.Location = new Point(364, 501);
+            btnQuayLai.Name = "btnQuayLai";
+            btnQuayLai.Size = new Size(75, 23);
+            btnQuayLai.TabIndex = 4;
+            btnQuayLai.Text = "Quay Lại";
+            btnQuayLai.UseVisualStyleBackColor = true;
+            btnQuayLai.Click += btnQuayLai_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(398, 63);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(223, 27);
+            label3.TabIndex = 6;
+            label3.Text = "Danh Sách Tài Khoản";
+            // 
+            // dgvTaiKhoan
+            // 
+            dgvTaiKhoan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTaiKhoan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTaiKhoan.Location = new Point(385, 104);
+            dgvTaiKhoan.Margin = new Padding(4, 3, 4, 3);
+            dgvTaiKhoan.Name = "dgvTaiKhoan";
+            dgvTaiKhoan.Size = new Size(421, 372);
+            dgvTaiKhoan.TabIndex = 7;
             // 
             // QuanLiKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dgvkhachhang);
-            this.Controls.Add(this.label1);
-            this.Name = "QuanLiKhachHang";
-            this.Size = new System.Drawing.Size(692, 488);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvkhachhang)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(dgvTaiKhoan);
+            Controls.Add(label3);
+            Controls.Add(btnQuayLai);
+            Controls.Add(dgvkhachhang);
+            Controls.Add(label1);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "QuanLiKhachHang";
+            Size = new Size(849, 563);
+            ((System.ComponentModel.ISupportInitialize)dgvkhachhang).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvTaiKhoan).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -69,5 +112,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvkhachhang;
+        private Button btnQuayLai;
+        private Label label3;
+        private DataGridView dgvTaiKhoan;
     }
 }

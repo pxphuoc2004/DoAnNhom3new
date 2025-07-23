@@ -12,7 +12,7 @@ using System.IO;
 
 namespace DoAnNhom3
 {
-    public partial class themdonhang: UserControl
+    public partial class themdonhang : UserControl
     {
         public themdonhang()
         {
@@ -23,17 +23,17 @@ namespace DoAnNhom3
         {
 
         }
-        /*public void SetData(DonHang dh)
-        {
-            txbtenmonan.Text = dh.TenMon;
-            txbdongia.Text = dh.DonGia.ToString("N0") + "đ";
 
-            string imgPath = Path.Combine(Application.StartupPath, "HinhAnh", dh.HinhAnh);
-            if (File.Exists(imgPath))
-            {
-                pictureBox1.Image = Image.FromFile(imgPath);
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-        }*/
+        private void themdonhang_Load_1(object sender, EventArgs e)
+        {
+
+        }
+        public void SetData(string tenMon, decimal giaTien, Image hinh)
+        {
+            txbtenmonan.Text = tenMon;
+            txbdongia.Text = giaTien.ToString("N0") + " đ";
+            pictureBox1.Image = hinh;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
     }
 }

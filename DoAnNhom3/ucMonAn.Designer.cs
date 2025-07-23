@@ -28,78 +28,86 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbtenmonan = new System.Windows.Forms.Label();
-            this.lbgia = new System.Windows.Forms.Label();
-            this.ptbanhmonan = new System.Windows.Forms.PictureBox();
-            this.btgiohang = new System.Windows.Forms.Button();
-            this.btmuangay = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbanhmonan)).BeginInit();
-            this.SuspendLayout();
+            lbtenmonan = new Label();
+            lbgia = new Label();
+            ptbanhmonan = new PictureBox();
+            btgiohang = new Button();
+            btmuangay = new Button();
+            ((System.ComponentModel.ISupportInitialize)ptbanhmonan).BeginInit();
+            SuspendLayout();
             // 
             // lbtenmonan
             // 
-            this.lbtenmonan.AutoSize = true;
-            this.lbtenmonan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtenmonan.Location = new System.Drawing.Point(55, 122);
-            this.lbtenmonan.Name = "lbtenmonan";
-            this.lbtenmonan.Size = new System.Drawing.Size(45, 19);
-            this.lbtenmonan.TabIndex = 1;
-            this.lbtenmonan.Text = "label1";
+            lbtenmonan.AutoSize = true;
+            lbtenmonan.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbtenmonan.Location = new Point(64, 141);
+            lbtenmonan.Margin = new Padding(4, 0, 4, 0);
+            lbtenmonan.Name = "lbtenmonan";
+            lbtenmonan.Size = new Size(45, 19);
+            lbtenmonan.TabIndex = 1;
+            lbtenmonan.Text = "label1";
             // 
             // lbgia
             // 
-            this.lbgia.AutoSize = true;
-            this.lbgia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbgia.Location = new System.Drawing.Point(55, 150);
-            this.lbgia.Name = "lbgia";
-            this.lbgia.Size = new System.Drawing.Size(45, 19);
-            this.lbgia.TabIndex = 2;
-            this.lbgia.Text = "label2";
+            lbgia.AutoSize = true;
+            lbgia.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbgia.Location = new Point(64, 173);
+            lbgia.Margin = new Padding(4, 0, 4, 0);
+            lbgia.Name = "lbgia";
+            lbgia.Size = new Size(45, 19);
+            lbgia.TabIndex = 2;
+            lbgia.Text = "label2";
             // 
             // ptbanhmonan
             // 
-            this.ptbanhmonan.Location = new System.Drawing.Point(0, 0);
-            this.ptbanhmonan.Name = "ptbanhmonan";
-            this.ptbanhmonan.Size = new System.Drawing.Size(153, 110);
-            this.ptbanhmonan.TabIndex = 0;
-            this.ptbanhmonan.TabStop = false;
+            ptbanhmonan.Location = new Point(0, 0);
+            ptbanhmonan.Margin = new Padding(4, 3, 4, 3);
+            ptbanhmonan.Name = "ptbanhmonan";
+            ptbanhmonan.Size = new Size(178, 127);
+            ptbanhmonan.TabIndex = 0;
+            ptbanhmonan.TabStop = false;
             // 
             // btgiohang
             // 
-//            this.btgiohang.BackgroundImage = global::DoAnNhom3.Properties.Resources.giohang;
-            this.btgiohang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btgiohang.Location = new System.Drawing.Point(106, 172);
-            this.btgiohang.Name = "btgiohang";
-            this.btgiohang.Size = new System.Drawing.Size(35, 31);
-            this.btgiohang.TabIndex = 22;
-            this.btgiohang.UseVisualStyleBackColor = true;
+            btgiohang.BackgroundImage = Properties.Resources.giohang;
+            btgiohang.BackgroundImageLayout = ImageLayout.Stretch;
+            btgiohang.Location = new Point(124, 198);
+            btgiohang.Margin = new Padding(4, 3, 4, 3);
+            btgiohang.Name = "btgiohang";
+            btgiohang.Size = new Size(41, 36);
+            btgiohang.TabIndex = 22;
+            btgiohang.UseVisualStyleBackColor = true;
+//            btgiohang.Click += btgiohang_Click;
             // 
             // btmuangay
             // 
-            this.btmuangay.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmuangay.Location = new System.Drawing.Point(7, 172);
-            this.btmuangay.Name = "btmuangay";
-            this.btmuangay.Size = new System.Drawing.Size(93, 31);
-            this.btmuangay.TabIndex = 21;
-            this.btmuangay.Text = "Mua ngay";
-            this.btmuangay.UseVisualStyleBackColor = true;
-  //          this.btmuangay.Click += new System.EventHandler(this.btmuangay_Click);
+            btmuangay.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btmuangay.Location = new Point(8, 198);
+            btmuangay.Margin = new Padding(4, 3, 4, 3);
+            btmuangay.Name = "btmuangay";
+            btmuangay.Size = new Size(108, 36);
+            btmuangay.TabIndex = 21;
+            btmuangay.Text = "Mua ngay";
+            btmuangay.UseVisualStyleBackColor = true;
+            btmuangay.Click += btmuangay_Click_1;
             // 
             // ucMonAn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btgiohang);
-            this.Controls.Add(this.btmuangay);
-            this.Controls.Add(this.lbgia);
-            this.Controls.Add(this.lbtenmonan);
-            this.Controls.Add(this.ptbanhmonan);
-            this.Name = "ucMonAn";
-            this.Size = new System.Drawing.Size(153, 209);
-     //       this.Load += new System.EventHandler(this.ucMonAn_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbanhmonan)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            Controls.Add(btgiohang);
+            Controls.Add(btmuangay);
+            Controls.Add(lbgia);
+            Controls.Add(lbtenmonan);
+            Controls.Add(ptbanhmonan);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "ucMonAn";
+            Size = new Size(178, 241);
+            Load += ucMonAn_Load;
+            ((System.ComponentModel.ISupportInitialize)ptbanhmonan).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

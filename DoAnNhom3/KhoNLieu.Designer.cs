@@ -28,46 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.dgvkhonguyenlieu = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvkhonguyenlieu)).BeginInit();
-            this.SuspendLayout();
+            label1 = new Label();
+            dgvKhoNLieu = new DataGridView();
+            btnQuayLai = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvKhoNLieu).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(237, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 27);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Danh sách nguyên liệu";
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(277, 30);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(230, 27);
+            label1.TabIndex = 2;
+            label1.Text = "Danh sách nguyên liệu";
             // 
-            // dgvkhonguyenlieu
+            // dgvKhoNLieu
             // 
-            this.dgvkhonguyenlieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvkhonguyenlieu.Location = new System.Drawing.Point(98, 95);
-            this.dgvkhonguyenlieu.Name = "dgvkhonguyenlieu";
-            this.dgvkhonguyenlieu.Size = new System.Drawing.Size(505, 344);
-            this.dgvkhonguyenlieu.TabIndex = 3;
+            dgvKhoNLieu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvKhoNLieu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvKhoNLieu.Location = new Point(136, 72);
+            dgvKhoNLieu.Margin = new Padding(4, 3, 4, 3);
+            dgvKhoNLieu.Name = "dgvKhoNLieu";
+            dgvKhoNLieu.Size = new Size(543, 397);
+            dgvKhoNLieu.TabIndex = 3;
+            // 
+            // btnQuayLai
+            // 
+            btnQuayLai.Location = new Point(353, 499);
+            btnQuayLai.Name = "btnQuayLai";
+            btnQuayLai.Size = new Size(75, 23);
+            btnQuayLai.TabIndex = 4;
+            btnQuayLai.Text = "Quay Lại";
+            btnQuayLai.UseVisualStyleBackColor = true;
+            btnQuayLai.Click += button1_Click;
             // 
             // KhoNLieu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dgvkhonguyenlieu);
-            this.Controls.Add(this.label1);
-            this.Name = "KhoNLieu";
-            this.Size = new System.Drawing.Size(692, 488);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvkhonguyenlieu)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnQuayLai);
+            Controls.Add(dgvKhoNLieu);
+            Controls.Add(label1);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "KhoNLieu";
+            Size = new Size(807, 563);
+            ((System.ComponentModel.ISupportInitialize)dgvKhoNLieu).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvkhonguyenlieu;
+        private System.Windows.Forms.DataGridView dgvKhoNLieu;
+        private Button btnQuayLai;
     }
 }

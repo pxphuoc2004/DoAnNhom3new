@@ -14,12 +14,16 @@ using Microsoft.Data.SqlClient;
 
 namespace DoAnNhom3
 {
-    public partial class BaoCaoThongKe: UserControl
+    public partial class BaoCaoThongKe : UserControl
     {
-        public BaoCaoThongKe()
+        private Menu formMenuCha;
+
+        public BaoCaoThongKe(Menu cha)
         {
             InitializeComponent();
+            formMenuCha = cha;
         }
+
 
         private void label5_Click(object sender, EventArgs e)
         {
@@ -36,16 +40,16 @@ namespace DoAnNhom3
             if (rdoNgay.Checked)
             {
                 query = @"
-            SELECT MaBaoCaoNgay, NgayThang, TenMonAn, DonViTinh, SoLuong, DoanhThuNgay 
+            SELECT MaBaoCaoNgay, Ngay, MaMon, DonViTinh, SoLuong, DoanhThuNgay 
             FROM BaoCaoNgay
-            WHERE NgayThang BETWEEN @TuNgay AND @DenNgay";
+            WHERE Ngay BETWEEN @TuNgay AND @DenNgay";
             }
             else if (rdoThang.Checked)
             {
                 query = @"
-            SELECT MaBaoCaoThang, NgayThang, TenMonAn, DonViTinh, SoLuong, DoanhThuThang 
+            SELECT MaBaoCaoThang, ThangNam, MaMon, DonViTinh, SoLuong, DoanhThuThang 
             FROM BaoCaoThang
-            WHERE NgayThang BETWEEN @TuNgay AND @DenNgay";
+            WHERE ThangNam BETWEEN @TuNgay AND @DenNgay";
             }
 
             DataTable dt = Database.GetData(query, parameters);
@@ -69,6 +73,16 @@ namespace DoAnNhom3
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnQuayLai_Click(object sender, EventArgs e)
+        {
+            formMenuCha.panelMain.Controls.Clear();
+        }
+
+        private void dgvBaoCao_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
