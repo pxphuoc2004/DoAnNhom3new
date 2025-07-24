@@ -22,6 +22,7 @@ namespace DoAnNhom3
             btQuayVe.Click += (s, e) => QuayVeClicked?.Invoke();
             btthanhtoanKH.Click += btthanhtoanKH_Click;
 
+            // Cấu hình FlowLayoutPanel
             flpgiohang.FlowDirection = FlowDirection.TopDown;
             flpgiohang.WrapContents = false;
             flpgiohang.AutoScroll = true;
@@ -120,7 +121,6 @@ namespace DoAnNhom3
 
         private void btthanhtoanKH_Click(object sender, EventArgs e)
         {
-            // BƯỚC 1: cập nhật số lượng
             foreach (Control panel in flpgiohang.Controls)
             {
                 if (panel is Panel p && p.Tag is MonAn mon)
@@ -135,18 +135,13 @@ namespace DoAnNhom3
                 }
             }
 
-            // BƯỚC 2: kiểm tra giỏ hàng
             if (gioHang.Count == 0)
             {
                 MessageBox.Show("Giỏ hàng đang trống!");
                 return;
             }
 
-            // BƯỚC 3: Gọi event
             ThanhToanClicked?.Invoke(new List<MonAn>(gioHang));
         }
-
-
-
     }
 }

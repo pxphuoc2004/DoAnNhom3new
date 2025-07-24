@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using DoAnNhom3.Model;
+using Microsoft.Data.SqlClient;
+
 
 namespace DoAnNhom3
 {
@@ -11,6 +15,7 @@ namespace DoAnNhom3
     {
         public event Action DonHangDatThanhCong;
         private List<MonAn> danhSachMon = new List<MonAn>();
+        private string connectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=QuanLyBanHangOnline1;Integrated Security=True";
 
         public HoaDon()
         {
@@ -99,7 +104,46 @@ namespace DoAnNhom3
 
         public void BatSuKienDatHang(EventHandler handler)
         {
-            btdathang.Click += handler;
+            btdathang.Click += async (s, e) =>
+            {
+                try
+                {
+                    await ThemBaoCaoNgayAsync();
+                    handler.Invoke(s, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi thêm báo cáo ngày: " + ex.Message);
+                }
+            };
+        }
+
+        private async Task ThemBaoCaoNgayAsync()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                await conn.OpenAsync();
+                foreach (var mon in danhSachMon)
+                {
+                    string maBCN = "BCN" + DateTime.Now.Ticks.ToString().Substring(10);
+
+                    string query = @"
+                        INSERT INTO BaoCaoNgay (MaBaoCaoNgay, Ngay, MaMon, DonViTinh, SoLuong, DoanhThuNgay)
+                        VALUES (@MaBCN, @Ngay, @MaMon, @DonViTinh, @SoLuong, @DoanhThu)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MaBCN", maBCN);
+                        cmd.Parameters.AddWithValue("@Ngay", DateTime.Now.Date);
+                        cmd.Parameters.AddWithValue("@MaMon", mon.MaMon);
+                        cmd.Parameters.AddWithValue("@DonViTinh", "Phần");
+                        cmd.Parameters.AddWithValue("@SoLuong", mon.SoLuong);
+                        cmd.Parameters.AddWithValue("@DoanhThu", mon.SoLuong * mon.GiaTien);
+
+                        await cmd.ExecuteNonQueryAsync();
+                    }
+                }
+            }
         }
 
         public void GoiSuKienDatHangThanhCong()

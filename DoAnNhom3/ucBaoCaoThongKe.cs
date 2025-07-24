@@ -19,13 +19,10 @@ namespace DoAnNhom3
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             string query = @"
-        SELECT h.MaHoaDon, h.NgayLap, h.SoDienThoaiKH, c.MaMon, m.TenMon,
-               c.SoLuong, c.DonGia, (c.SoLuong * c.DonGia) AS ThanhTien
-        FROM HoaDon h
-        JOIN ChiTietHoaDon c ON h.MaHoaDon = c.MaHoaDon
-        JOIN MonAn m ON c.MaMon = m.MaMon
-        WHERE h.NgayLap >= @TuNgay AND h.NgayLap < DATEADD(DAY, 1, @DenNgay)
-        ORDER BY h.NgayLap DESC";
+    SELECT MaBaoCaoNgay, Ngay, MaMon, DonViTinh, SoLuong, DoanhThuNgay
+    FROM BaoCaoNgay
+    WHERE Ngay BETWEEN @TuNgay AND @DenNgay
+    ORDER BY Ngay DESC";
 
             try
             {
@@ -42,17 +39,17 @@ namespace DoAnNhom3
                     dgvBaoCao.DataSource = dt;
                     dgvBaoCao.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                    // Format tiền
-                    if (dgvBaoCao.Columns.Contains("DonGia"))
-                        dgvBaoCao.Columns["DonGia"].DefaultCellStyle.Format = "N0";
-                    if (dgvBaoCao.Columns.Contains("ThanhTien"))
-                        dgvBaoCao.Columns["ThanhTien"].DefaultCellStyle.Format = "N0";
+                    if (dgvBaoCao.Columns.Contains("Ngay"))
+                        dgvBaoCao.Columns["Ngay"].DefaultCellStyle.Format = "dd/MM/yyyy";
+                    if (dgvBaoCao.Columns.Contains("DoanhThuNgay"))
+                        dgvBaoCao.Columns["DoanhThuNgay"].DefaultCellStyle.Format = "N0";
 
                     // Tổng doanh thu
                     decimal tong = 0;
                     foreach (DataRow row in dt.Rows)
                     {
-                        tong += Convert.ToDecimal(row["ThanhTien"]);
+                        if (row["DoanhThuNgay"] != DBNull.Value)
+                            tong += Convert.ToDecimal(row["DoanhThuNgay"]);
                     }
 
                     lblTongDoanhThu.Text = "Tổng doanh thu: " + tong.ToString("N0") + " VNĐ";
@@ -63,6 +60,8 @@ namespace DoAnNhom3
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
+
+
 
 
         private void btnQuayLai_Click(object sender, EventArgs e)

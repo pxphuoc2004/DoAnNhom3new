@@ -165,6 +165,9 @@ namespace DoAnNhom3
 
             string query1 = "INSERT INTO HoaDon (MaHoaDon, NgayLap, SoDienThoaiKH, MaNhanVien) VALUES (@MaHoaDon, @NgayLap, @SoDT, @MaNV)";
             string query2 = "INSERT INTO ChiTietHoaDon (MaHoaDon, MaMon, DonGia, SoLuong, ThanhTien) VALUES (@MaHoaDon, @MaMon, @DonGia, @SoLuong, @ThanhTien)";
+            string query3 = @"INSERT INTO BaoCaoNgay 
+                      (MaBaoCaoNgay, Ngay, MaMon, DonViTinh, SoLuong, DoanhThuNgay)
+                      VALUES (@MaBaoCaoNgay, @Ngay, @MaMon, @DonViTinh, @SoLuong, @DoanhThuNgay)";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -189,6 +192,17 @@ namespace DoAnNhom3
                         cmd2.Parameters.AddWithValue("@SoLuong", mon.SoLuong);
                         cmd2.Parameters.AddWithValue("@ThanhTien", mon.GiaTien * mon.SoLuong);
                         cmd2.ExecuteNonQuery();
+
+                        // ✅ Ghi vào bảng BaoCaoNgay
+                        string maBCN = "BCN" + DateTime.Now.Ticks.ToString().Substring(10);
+                        SqlCommand cmd3 = new SqlCommand(query3, conn, tran);
+                        cmd3.Parameters.AddWithValue("@MaBaoCaoNgay", maBCN);
+                        cmd3.Parameters.AddWithValue("@Ngay", DateTime.Now.Date);
+                        cmd3.Parameters.AddWithValue("@MaMon", mon.MaMon);
+                        cmd3.Parameters.AddWithValue("@DonViTinh", "Phần");
+                        cmd3.Parameters.AddWithValue("@SoLuong", mon.SoLuong);
+                        cmd3.Parameters.AddWithValue("@DoanhThuNgay", mon.GiaTien * mon.SoLuong);
+                        cmd3.ExecuteNonQuery();
                     }
 
                     tran.Commit();
@@ -202,6 +216,8 @@ namespace DoAnNhom3
                 }
             }
         }
+
+
 
         private void btqldonhang_Click(object sender, EventArgs e)
         {
