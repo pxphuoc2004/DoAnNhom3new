@@ -43,7 +43,7 @@
             // 
             // btnQuayLai
             // 
-            btnQuayLai.Location = new Point(241, 203);
+            btnQuayLai.Location = new Point(225, 186);
             btnQuayLai.Name = "btnQuayLai";
             btnQuayLai.Size = new Size(75, 23);
             btnQuayLai.TabIndex = 28;
@@ -53,7 +53,7 @@
             // lblTongDoanhThu
             // 
             lblTongDoanhThu.AutoSize = true;
-            lblTongDoanhThu.Location = new Point(103, 154);
+            lblTongDoanhThu.Location = new Point(103, 142);
             lblTongDoanhThu.Margin = new Padding(4, 0, 4, 0);
             lblTongDoanhThu.Name = "lblTongDoanhThu";
             lblTongDoanhThu.Size = new Size(97, 15);
@@ -62,7 +62,7 @@
             // 
             // btnThongKe
             // 
-            btnThongKe.Location = new Point(112, 199);
+            btnThongKe.Location = new Point(103, 186);
             btnThongKe.Margin = new Padding(4, 3, 4, 3);
             btnThongKe.Name = "btnThongKe";
             btnThongKe.Size = new Size(88, 27);
