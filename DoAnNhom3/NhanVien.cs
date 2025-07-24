@@ -2,8 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
-using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using DoAnNhom3.Model;
 
@@ -45,8 +44,8 @@ namespace DoAnNhom3
             ucDonHangControl = new ucDonHang();
             ucDonHangControl.Dock = DockStyle.Fill;
 
-            ucQLDonHangControl = new QuanLiDonHang(); // ✅ THÊM
-            ucQLDonHangControl.Dock = DockStyle.Fill; // ✅ THÊM
+            ucQLDonHangControl = new QuanLiDonHang();
+            ucQLDonHangControl.Dock = DockStyle.Fill;
 
             ucDonHangControl.QuayVeClicked += () =>
             {
@@ -55,7 +54,7 @@ namespace DoAnNhom3
                 panelMain.Controls.Add(panelSideBar);
             };
 
-            ucDonHangControl.ThanhToanClicked += (dsMon) =>
+            ucDonHangControl.ThanhToanClicked += async (dsMon) =>
             {
                 hoaDonControl = new HoaDon();
                 hoaDonControl.Dock = DockStyle.Fill;
@@ -63,15 +62,14 @@ namespace DoAnNhom3
                 string sdtKH = "0900000001";
                 hoaDonControl.SetData(dsMon, sdtKH);
 
-                hoaDonControl.BatSuKienDatHang((s, e) =>
+                hoaDonControl.BatSuKienDatHang(async (s, e) =>
                 {
-                    LuuHoaDon(dsMon, sdtKH);
+                    await LuuHoaDonAsync(dsMon, sdtKH);
                 });
 
                 hoaDonControl.DonHangDatThanhCong += () =>
                 {
-                    ucQLDonHangControl.Reload(); // ✅ SẼ CÓ TÁC DỤNG
-
+                    ucQLDonHangControl.Reload();
                     panelMain.Controls.Clear();
                     panelMain.Controls.Add(panelContent);
                     panelMain.Controls.Add(panelSideBar);
@@ -159,66 +157,6 @@ namespace DoAnNhom3
             panelMain.Controls.Add(panelSideBar);
         }
 
-        private void LuuHoaDon(List<MonAn> danhSachMon, string sdtKhach)
-        {
-            string maHD = "HD" + DateTime.Now.Ticks.ToString().Substring(10);
-
-            string query1 = "INSERT INTO HoaDon (MaHoaDon, NgayLap, SoDienThoaiKH, MaNhanVien) VALUES (@MaHoaDon, @NgayLap, @SoDT, @MaNV)";
-            string query2 = "INSERT INTO ChiTietHoaDon (MaHoaDon, MaMon, DonGia, SoLuong, ThanhTien) VALUES (@MaHoaDon, @MaMon, @DonGia, @SoLuong, @ThanhTien)";
-            string query3 = @"INSERT INTO BaoCaoNgay 
-                      (MaBaoCaoNgay, Ngay, MaMon, DonViTinh, SoLuong, DoanhThuNgay)
-                      VALUES (@MaBaoCaoNgay, @Ngay, @MaMon, @DonViTinh, @SoLuong, @DoanhThuNgay)";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                SqlTransaction tran = conn.BeginTransaction();
-
-                try
-                {
-                    SqlCommand cmd1 = new SqlCommand(query1, conn, tran);
-                    cmd1.Parameters.AddWithValue("@MaHoaDon", maHD);
-                    cmd1.Parameters.AddWithValue("@NgayLap", DateTime.Now);
-                    cmd1.Parameters.AddWithValue("@SoDT", sdtKhach);
-                    cmd1.Parameters.AddWithValue("@MaNV", "NV01");
-                    cmd1.ExecuteNonQuery();
-
-                    foreach (var mon in danhSachMon)
-                    {
-                        SqlCommand cmd2 = new SqlCommand(query2, conn, tran);
-                        cmd2.Parameters.AddWithValue("@MaHoaDon", maHD);
-                        cmd2.Parameters.AddWithValue("@MaMon", mon.MaMon);
-                        cmd2.Parameters.AddWithValue("@DonGia", mon.GiaTien);
-                        cmd2.Parameters.AddWithValue("@SoLuong", mon.SoLuong);
-                        cmd2.Parameters.AddWithValue("@ThanhTien", mon.GiaTien * mon.SoLuong);
-                        cmd2.ExecuteNonQuery();
-
-                        // ✅ Ghi vào bảng BaoCaoNgay
-                        string maBCN = "BCN" + DateTime.Now.Ticks.ToString().Substring(10);
-                        SqlCommand cmd3 = new SqlCommand(query3, conn, tran);
-                        cmd3.Parameters.AddWithValue("@MaBaoCaoNgay", maBCN);
-                        cmd3.Parameters.AddWithValue("@Ngay", DateTime.Now.Date);
-                        cmd3.Parameters.AddWithValue("@MaMon", mon.MaMon);
-                        cmd3.Parameters.AddWithValue("@DonViTinh", "Phần");
-                        cmd3.Parameters.AddWithValue("@SoLuong", mon.SoLuong);
-                        cmd3.Parameters.AddWithValue("@DoanhThuNgay", mon.GiaTien * mon.SoLuong);
-                        cmd3.ExecuteNonQuery();
-                    }
-
-                    tran.Commit();
-                    MessageBox.Show("Đặt hàng thành công!");
-                    hoaDonControl?.GoiSuKienDatHangThanhCong();
-                }
-                catch (Exception ex)
-                {
-                    tran.Rollback();
-                    MessageBox.Show("Lỗi lưu hóa đơn: " + ex.Message);
-                }
-            }
-        }
-
-
-
         private void btqldonhang_Click(object sender, EventArgs e)
         {
             if (ucQLDonHangControl == null)
@@ -226,7 +164,8 @@ namespace DoAnNhom3
                 ucQLDonHangControl = new QuanLiDonHang();
                 ucQLDonHangControl.Dock = DockStyle.Fill;
             }
-            ucQLDonHangControl.Reload(); // Tải lại danh sách đơn
+
+            ucQLDonHangControl.Reload();
             panelMain.Controls.Clear();
             panelMain.Controls.Add(ucQLDonHangControl);
             panelMain.Controls.Add(panelSideBar);
@@ -250,6 +189,81 @@ namespace DoAnNhom3
             panelMain.Controls.Clear();
             panelMain.Controls.Add(ucBaoCaoControl);
             panelMain.Controls.Add(panelSideBar);
+        }
+
+        // ✅ Hàm lưu hóa đơn + gọi thêm Báo cáo ngày
+        private async Task LuuHoaDonAsync(List<MonAn> danhSachMon, string sdtKhach)
+        {
+            string maHD = "HD" + DateTime.Now.Ticks.ToString().Substring(10);
+
+            string query1 = "INSERT INTO HoaDon (MaHoaDon, NgayLap, SoDienThoaiKH, MaNhanVien) VALUES (@MaHoaDon, @NgayLap, @SoDT, @MaNV)";
+            string query2 = "INSERT INTO ChiTietHoaDon (MaHoaDon, MaMon, DonGia, SoLuong, ThanhTien) VALUES (@MaHoaDon, @MaMon, @DonGia, @SoLuong, @ThanhTien)";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                await conn.OpenAsync();
+                SqlTransaction tran = conn.BeginTransaction();
+
+                try
+                {
+                    SqlCommand cmd1 = new SqlCommand(query1, conn, tran);
+                    cmd1.Parameters.AddWithValue("@MaHoaDon", maHD);
+                    cmd1.Parameters.AddWithValue("@NgayLap", DateTime.Now);
+                    cmd1.Parameters.AddWithValue("@SoDT", sdtKhach);
+                    cmd1.Parameters.AddWithValue("@MaNV", "NV01");
+                    await cmd1.ExecuteNonQueryAsync();
+
+                    foreach (var mon in danhSachMon)
+                    {
+                        SqlCommand cmd2 = new SqlCommand(query2, conn, tran);
+                        cmd2.Parameters.AddWithValue("@MaHoaDon", maHD);
+                        cmd2.Parameters.AddWithValue("@MaMon", mon.MaMon);
+                        cmd2.Parameters.AddWithValue("@DonGia", mon.GiaTien);
+                        cmd2.Parameters.AddWithValue("@SoLuong", mon.SoLuong);
+                        cmd2.Parameters.AddWithValue("@ThanhTien", mon.GiaTien * mon.SoLuong);
+                        await cmd2.ExecuteNonQueryAsync();
+                    }
+
+                    tran.Commit();
+                    MessageBox.Show("Đặt hàng thành công!");
+
+                    await ThemBaoCaoNgayAsync(danhSachMon, DateTime.Now);
+                    hoaDonControl?.GoiSuKienDatHangThanhCong();
+                }
+                catch (Exception ex)
+                {
+                    tran.Rollback();
+                    MessageBox.Show("Lỗi lưu hóa đơn: " + ex.Message);
+                }
+            }
+        }
+
+        private async Task ThemBaoCaoNgayAsync(List<MonAn> danhSachMon, DateTime ngay)
+        {
+            using (var conn = new SqlConnection(connectionString))
+            {
+                await conn.OpenAsync();
+
+                foreach (var mon in danhSachMon)
+                {
+                    string query = @"
+                        INSERT INTO BaoCaoNgay (MaBaoCaoNgay, Ngay, MaMon, DonViTinh, SoLuong, DoanhThuNgay)
+                        VALUES (@MaBC, @Ngay, @MaMon, @DVT, @SoLuong, @DoanhThu)";
+
+                    using (var cmd = new SqlCommand(query, conn))
+                    {
+                        string maBC = "BC" + Guid.NewGuid().ToString("N").Substring(0, 10);
+                        cmd.Parameters.AddWithValue("@MaBC", maBC);
+                        cmd.Parameters.AddWithValue("@Ngay", ngay.Date);
+                        cmd.Parameters.AddWithValue("@MaMon", mon.MaMon);
+                        cmd.Parameters.AddWithValue("@DVT", "Phần");
+                        cmd.Parameters.AddWithValue("@SoLuong", mon.SoLuong);
+                        cmd.Parameters.AddWithValue("@DoanhThu", mon.GiaTien * mon.SoLuong);
+
+                        await cmd.ExecuteNonQueryAsync();
+                    }
+                }
+            }
         }
     }
 }
