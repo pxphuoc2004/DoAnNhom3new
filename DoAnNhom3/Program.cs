@@ -15,7 +15,7 @@ namespace DoAnNhom3
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Mở trực tiếp form NhanVien (form chính của bạn)
-            Application.Run(new NhanVien());
+            Application.Run(new DangNhap());
         }
     }
 }
