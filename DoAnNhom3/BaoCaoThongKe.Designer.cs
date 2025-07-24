@@ -129,7 +129,7 @@ namespace DoAnNhom3
             rdoNgay.Location = new Point(37, 159);
             rdoNgay.Margin = new Padding(4, 3, 4, 3);
             rdoNgay.Name = "rdoNgay";
-            rdoNgay.Size = new Size(82, 19);
+            rdoNgay.Size = new Size(83, 19);
             rdoNgay.TabIndex = 12;
             rdoNgay.TabStop = true;
             rdoNgay.Text = "Theo Ngày";
@@ -141,7 +141,7 @@ namespace DoAnNhom3
             rdoThang.Location = new Point(37, 195);
             rdoThang.Margin = new Padding(4, 3, 4, 3);
             rdoThang.Name = "rdoThang";
-            rdoThang.Size = new Size(87, 19);
+            rdoThang.Size = new Size(89, 19);
             rdoThang.TabIndex = 13;
             rdoThang.Text = "Theo Tháng";
             rdoThang.UseVisualStyleBackColor = true;
@@ -163,7 +163,7 @@ namespace DoAnNhom3
             lblTongDoanhThu.Location = new Point(33, 238);
             lblTongDoanhThu.Margin = new Padding(4, 0, 4, 0);
             lblTongDoanhThu.Name = "lblTongDoanhThu";
-            lblTongDoanhThu.Size = new Size(95, 15);
+            lblTongDoanhThu.Size = new Size(97, 15);
             lblTongDoanhThu.TabIndex = 15;
             lblTongDoanhThu.Text = "Tổng Doanh Thu";
             lblTongDoanhThu.Click += label6_Click;

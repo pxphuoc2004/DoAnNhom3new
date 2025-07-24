@@ -28,33 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            button4 = new Button();
+            dgvDonHang = new DataGridView();
+            btnTaiLai = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvDonHang).BeginInit();
+            SuspendLayout();
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(224, 43);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(224, 38);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Danh sách đơn hàng";
-            this.button4.UseVisualStyleBackColor = true;
+            button4.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.ForeColor = Color.Black;
+            button4.Location = new Point(261, 50);
+            button4.Margin = new Padding(4, 3, 4, 3);
+            button4.Name = "button4";
+            button4.Size = new Size(261, 44);
+            button4.TabIndex = 8;
+            button4.Text = "Danh sách đơn hàng";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // dgvDonHang
+            // 
+            dgvDonHang.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDonHang.Location = new Point(99, 185);
+            dgvDonHang.Name = "dgvDonHang";
+            dgvDonHang.Size = new Size(621, 228);
+            dgvDonHang.TabIndex = 9;
+            // 
+            // btnTaiLai
+            // 
+            btnTaiLai.Location = new Point(435, 471);
+            btnTaiLai.Name = "btnTaiLai";
+            btnTaiLai.Size = new Size(75, 23);
+            btnTaiLai.TabIndex = 10;
+            btnTaiLai.Text = "Update";
+            btnTaiLai.UseVisualStyleBackColor = true;
             // 
             // QuanLiDonHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button4);
-            this.Name = "QuanLiDonHang";
-            this.Size = new System.Drawing.Size(692, 488);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnTaiLai);
+            Controls.Add(dgvDonHang);
+            Controls.Add(button4);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "QuanLiDonHang";
+            Size = new Size(807, 563);
+            ((System.ComponentModel.ISupportInitialize)dgvDonHang).EndInit();
+            ResumeLayout(false);
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button button4;
+        private DataGridView dgvDonHang;
+        private Button btnTaiLai;
     }
 }

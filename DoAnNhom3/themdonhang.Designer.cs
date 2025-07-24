@@ -31,7 +31,9 @@
             pictureBox1 = new PictureBox();
             txbtenmonan = new TextBox();
             txbdongia = new TextBox();
+            numSL = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numSL).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -59,18 +61,27 @@
             txbdongia.Size = new Size(200, 23);
             txbdongia.TabIndex = 2;
             // 
+            // numSL
+            // 
+            numSL.Location = new Point(158, 82);
+            numSL.Name = "numSL";
+            numSL.Size = new Size(120, 23);
+            numSL.TabIndex = 3;
+            // 
             // themdonhang
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(numSL);
             Controls.Add(txbdongia);
             Controls.Add(txbtenmonan);
             Controls.Add(pictureBox1);
             Margin = new Padding(4, 3, 4, 3);
             Name = "themdonhang";
-            Size = new Size(376, 99);
+            Size = new Size(399, 124);
             Load += themdonhang_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numSL).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -81,5 +92,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txbtenmonan;
         private System.Windows.Forms.TextBox txbdongia;
+        private NumericUpDown numSL;
     }
 }

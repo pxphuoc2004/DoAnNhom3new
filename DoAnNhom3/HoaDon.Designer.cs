@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            flpMonAnHoaDon = new FlowLayoutPanel();
+            txbtenmonan = new TextBox();
+            ptbmonanthanhtoan = new PictureBox();
+            label3 = new Label();
+            txbdongiathahtoan = new TextBox();
             label7 = new Label();
             tbxtongtien = new TextBox();
             btdathang = new Button();
@@ -36,34 +41,22 @@
             txbngaylaphoadon = new TextBox();
             label5 = new Label();
             txbsdtkh = new TextBox();
-            label3 = new Label();
-            txbslgthanhtoan = new TextBox();
-            txbdongiathahtoan = new TextBox();
-            ptbmonanthanhtoan = new PictureBox();
-            label2 = new Label();
-            txbtenmonan = new TextBox();
             label4 = new Label();
             txbmahoadon = new TextBox();
             label1 = new Label();
             panel1.SuspendLayout();
+            flpMonAnHoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ptbmonanthanhtoan).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(tbxtongtien);
+            panel1.Controls.Add(flpMonAnHoaDon);
             panel1.Controls.Add(btdathang);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(txbngaylaphoadon);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(txbsdtkh);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(txbslgthanhtoan);
-            panel1.Controls.Add(txbdongiathahtoan);
-            panel1.Controls.Add(ptbmonanthanhtoan);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(txbtenmonan);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(txbmahoadon);
             panel1.Controls.Add(label1);
@@ -73,11 +66,65 @@
             panel1.Size = new Size(442, 459);
             panel1.TabIndex = 0;
             // 
+            // flpMonAnHoaDon
+            // 
+            flpMonAnHoaDon.AutoScroll = true;
+            flpMonAnHoaDon.Controls.Add(txbtenmonan);
+            flpMonAnHoaDon.Controls.Add(ptbmonanthanhtoan);
+            flpMonAnHoaDon.Controls.Add(label3);
+            flpMonAnHoaDon.Controls.Add(txbdongiathahtoan);
+            flpMonAnHoaDon.Controls.Add(label7);
+            flpMonAnHoaDon.Controls.Add(tbxtongtien);
+            flpMonAnHoaDon.FlowDirection = FlowDirection.TopDown;
+            flpMonAnHoaDon.Location = new Point(4, 224);
+            flpMonAnHoaDon.Name = "flpMonAnHoaDon";
+            flpMonAnHoaDon.Padding = new Padding(5);
+            flpMonAnHoaDon.Size = new Size(438, 148);
+            flpMonAnHoaDon.TabIndex = 46;
+            flpMonAnHoaDon.WrapContents = false;
+            // 
+            // txbtenmonan
+            // 
+            txbtenmonan.Location = new Point(9, 8);
+            txbtenmonan.Margin = new Padding(4, 3, 4, 3);
+            txbtenmonan.Name = "txbtenmonan";
+            txbtenmonan.Size = new Size(177, 23);
+            txbtenmonan.TabIndex = 34;
+            // 
+            // ptbmonanthanhtoan
+            // 
+            ptbmonanthanhtoan.Location = new Point(9, 37);
+            ptbmonanthanhtoan.Margin = new Padding(4, 3, 4, 3);
+            ptbmonanthanhtoan.Name = "ptbmonanthanhtoan";
+            ptbmonanthanhtoan.Size = new Size(107, 95);
+            ptbmonanthanhtoan.SizeMode = PictureBoxSizeMode.StretchImage;
+            ptbmonanthanhtoan.TabIndex = 35;
+            ptbmonanthanhtoan.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(9, 135);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(69, 21);
+            label3.TabIndex = 38;
+            label3.Text = "Đơn giá";
+            // 
+            // txbdongiathahtoan
+            // 
+            txbdongiathahtoan.Location = new Point(9, 159);
+            txbdongiathahtoan.Margin = new Padding(4, 3, 4, 3);
+            txbdongiathahtoan.Name = "txbdongiathahtoan";
+            txbdongiathahtoan.Size = new Size(134, 23);
+            txbdongiathahtoan.TabIndex = 36;
+            // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(175, 315);
+            label7.Location = new Point(9, 185);
             label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new Size(81, 21);
@@ -86,7 +133,7 @@
             // 
             // tbxtongtien
             // 
-            tbxtongtien.Location = new Point(276, 317);
+            tbxtongtien.Location = new Point(9, 209);
             tbxtongtien.Margin = new Padding(4, 3, 4, 3);
             tbxtongtien.Name = "tbxtongtien";
             tbxtongtien.Size = new Size(134, 23);
@@ -95,7 +142,7 @@
             // btdathang
             // 
             btdathang.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btdathang.Location = new Point(149, 391);
+            btdathang.Location = new Point(13, 427);
             btdathang.Margin = new Padding(4, 3, 4, 3);
             btdathang.Name = "btdathang";
             btdathang.Size = new Size(150, 32);
@@ -141,62 +188,6 @@
             txbsdtkh.Size = new Size(224, 23);
             txbsdtkh.TabIndex = 40;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(178, 287);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(69, 21);
-            label3.TabIndex = 38;
-            label3.Text = "Đơn giá";
-            // 
-            // txbslgthanhtoan
-            // 
-            txbslgthanhtoan.Location = new Point(279, 257);
-            txbslgthanhtoan.Margin = new Padding(4, 3, 4, 3);
-            txbslgthanhtoan.Name = "txbslgthanhtoan";
-            txbslgthanhtoan.Size = new Size(66, 23);
-            txbslgthanhtoan.TabIndex = 37;
-            // 
-            // txbdongiathahtoan
-            // 
-            txbdongiathahtoan.Location = new Point(276, 287);
-            txbdongiathahtoan.Margin = new Padding(4, 3, 4, 3);
-            txbdongiathahtoan.Name = "txbdongiathahtoan";
-            txbdongiathahtoan.Size = new Size(134, 23);
-            txbdongiathahtoan.TabIndex = 36;
-            // 
-            // ptbmonanthanhtoan
-            // 
-            ptbmonanthanhtoan.Location = new Point(40, 252);
-            ptbmonanthanhtoan.Margin = new Padding(4, 3, 4, 3);
-            ptbmonanthanhtoan.Name = "ptbmonanthanhtoan";
-            ptbmonanthanhtoan.Size = new Size(107, 95);
-            ptbmonanthanhtoan.SizeMode = PictureBoxSizeMode.StretchImage;
-            ptbmonanthanhtoan.TabIndex = 35;
-            ptbmonanthanhtoan.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(181, 257);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(78, 21);
-            label2.TabIndex = 33;
-            label2.Text = "Số lượng";
-            // 
-            // txbtenmonan
-            // 
-            txbtenmonan.Location = new Point(4, 222);
-            txbtenmonan.Margin = new Padding(4, 3, 4, 3);
-            txbtenmonan.Name = "txbtenmonan";
-            txbtenmonan.Size = new Size(177, 23);
-            txbtenmonan.TabIndex = 34;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -234,10 +225,12 @@
             Controls.Add(panel1);
             Margin = new Padding(4, 3, 4, 3);
             Name = "HoaDon";
-            Size = new Size(807, 563);
+            Size = new Size(1152, 714);
             Load += HoaDon_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            flpMonAnHoaDon.ResumeLayout(false);
+            flpMonAnHoaDon.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ptbmonanthanhtoan).EndInit();
             ResumeLayout(false);
 
@@ -248,12 +241,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbmahoadon;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txbtenmonan;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox ptbmonanthanhtoan;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txbslgthanhtoan;
         private System.Windows.Forms.TextBox txbdongiathahtoan;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txbngaylaphoadon;
@@ -262,5 +253,6 @@
         private System.Windows.Forms.Button btdathang;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbxtongtien;
+        private FlowLayoutPanel flpMonAnHoaDon;
     }
 }

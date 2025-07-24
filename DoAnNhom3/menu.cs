@@ -16,6 +16,7 @@ namespace DoAnNhom3
         {
             InitializeComponent();
         }
+        // Đổi từ NhanVien ➝ Menu
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
